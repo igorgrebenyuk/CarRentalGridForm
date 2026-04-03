@@ -15,7 +15,20 @@
         /// <summary>
         /// Автоматически рассчитывает запас хода.
         /// </summary>
-        public double Range => AverageConsumption > 0 ? CurrentFuel / AverageConsumption : 0;
+        public double Range
+        {
+            get
+            {
+                // Если расход не указан или равен 0, запас хода рассчитать нельзя
+                if (AverageConsumption <= 0)
+                {
+                    return 0;
+                }
+
+                var result = (CurrentFuel / AverageConsumption) * 100;
+                return Math.Round(result, 2);
+            }
+        }
 
         /// <summary>
         /// Автоматически рассчитывает итоговую сумму.

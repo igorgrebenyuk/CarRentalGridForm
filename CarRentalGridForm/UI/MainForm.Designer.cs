@@ -32,8 +32,8 @@ namespace CarRentalGridForm.UI
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarRentalGridForm));
             dgvCars = new DataGridView();
             colBrand = new DataGridViewTextBoxColumn();
@@ -45,9 +45,9 @@ namespace CarRentalGridForm.UI
             colRange = new DataGridViewTextBoxColumn();
             colTotalSum = new DataGridViewTextBoxColumn();
             toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
+            btnAddCar = new ToolStripButton();
+            btnEditCar = new ToolStripButton();
+            btnDeleteCar = new ToolStripButton();
             statusStrip1 = new StatusStrip();
             lblStatusInfo = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)dgvCars).BeginInit();
@@ -113,9 +113,9 @@ namespace CarRentalGridForm.UI
             // colRange
             // 
             colRange.DataPropertyName = "Range";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            colRange.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            colRange.DefaultCellStyle = dataGridViewCellStyle3;
             colRange.HeaderText = "Запас хода (ч)";
             colRange.Name = "colRange";
             colRange.ReadOnly = true;
@@ -123,49 +123,51 @@ namespace CarRentalGridForm.UI
             // colTotalSum
             // 
             colTotalSum.DataPropertyName = "TotalRentSum";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            colTotalSum.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            colTotalSum.DefaultCellStyle = dataGridViewCellStyle4;
             colTotalSum.HeaderText = "Сумма аренды";
             colTotalSum.Name = "colTotalSum";
             colTotalSum.ReadOnly = true;
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAddCar, btnEditCar, btnDeleteCar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(878, 25);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btnAddCar
             // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(23, 22);
-            toolStripButton1.Text = "toolStripButton1";
+            btnAddCar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAddCar.Image = (Image)resources.GetObject("btnAddCar.Image");
+            btnAddCar.ImageTransparentColor = Color.Magenta;
+            btnAddCar.Name = "btnAddCar";
+            btnAddCar.Size = new Size(23, 22);
+            btnAddCar.Text = "Добавить ";
+            btnAddCar.Click += btnAddCar_Click;
             // 
-            // toolStripButton2
+            // btnEditCar
             // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(23, 22);
-            toolStripButton2.Text = "Изменить ";
-            toolStripButton2.Click += toolStripButton2_Click;
+            btnEditCar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditCar.Image = (Image)resources.GetObject("btnEditCar.Image");
+            btnEditCar.ImageTransparentColor = Color.Magenta;
+            btnEditCar.Name = "btnEditCar";
+            btnEditCar.Size = new Size(23, 22);
+            btnEditCar.Text = "Изменить ";
+            this.btnEditCar.Click += btnEditCar_Click;
             // 
-            // toolStripButton3
+            // btnDeleteCar
             // 
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(23, 22);
-            toolStripButton3.Text = "toolStripButton3";
+            btnDeleteCar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDeleteCar.Image = (Image)resources.GetObject("btnDeleteCar.Image");
+            btnDeleteCar.ImageTransparentColor = Color.Magenta;
+            btnDeleteCar.Name = "btnDeleteCar";
+            btnDeleteCar.Size = new Size(23, 22);
+            btnDeleteCar.Text = "Удалить";
+            btnDeleteCar.Click += btnDeleteCar_Click;
             // 
             // statusStrip1
             // 
@@ -190,8 +192,9 @@ namespace CarRentalGridForm.UI
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
             Controls.Add(dgvCars);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "CarRentalGridForm";
-            Text = "Form1";
+            Text = "Прокат автомобиля";
             ((System.ComponentModel.ISupportInitialize)dgvCars).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
@@ -205,9 +208,9 @@ namespace CarRentalGridForm.UI
 
         private DataGridView dgvCars;
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
+        private ToolStripButton btnAddCar;
+        private ToolStripButton btnEditCar;
+        private ToolStripButton btnDeleteCar;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblStatusInfo;
         private DataGridViewTextBoxColumn colBrand;

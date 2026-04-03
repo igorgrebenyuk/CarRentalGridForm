@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             numMileage = new NumericUpDown();
             label1 = new Label();
             txtBrand = new TextBox();
@@ -43,10 +44,12 @@
             btnOk = new Button();
             btnCancel = new Button();
             label7 = new Label();
+            errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)numMileage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numConsumption).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numFuel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // numMileage
@@ -154,7 +157,6 @@
             // 
             // btnOk
             // 
-            btnOk.DialogResult = DialogResult.OK;
             btnOk.Location = new Point(85, 403);
             btnOk.Name = "btnOk";
             btnOk.Size = new Size(75, 23);
@@ -182,6 +184,10 @@
             label7.Size = new Size(168, 17);
             label7.TabIndex = 11;
             label7.Text = "Редактирование автомобиля";
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // CarEditForm
             // 
@@ -213,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)numConsumption).EndInit();
             ((System.ComponentModel.ISupportInitialize)numFuel).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,5 +241,6 @@
         private Button btnOk;
         private Button btnCancel;
         private Label label7;
+        private ErrorProvider errorProvider;
     }
 }

@@ -1,58 +1,84 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using CarRentalGridForm.Models;
 
 namespace CarRentalGridForm.UI
 {
     /// <summary>
-    /// Окно добавления и редактирования информации об автомобиле.
+    /// Форма для редактирования данных автомобиля с поддержкой валидации.
     /// </summary>
     public partial class CarEditForm : Form
     {
         private Car currentCar;
 
-        /// <summary>
-        /// Инициализирует форму для редактирования переданного автомобиля.
-        /// </summary>
         public CarEditForm(Car car)
         {
             InitializeComponent();
             currentCar = car;
         }
 
-        /// <summary>
-        /// Вызывается при загрузке формы. Заполняет поля данными автомобиля.
-        /// </summary>
         private void CarEditForm_Load(object sender, EventArgs e)
         {
+            // Заполняем поля данными (как делали раньше)
             txtBrand.Text = currentCar.Brand;
             txtLicensePlate.Text = currentCar.LicensePlate;
-
-            // Защита от выхода за границы NumericUpDown
-            numMileage.Value = Math.Min(numMileage.Maximum, currentCar.Mileage);
-            numConsumption.Value = Math.Min(numConsumption.Maximum, (decimal)currentCar.AverageConsumption);
-            numFuel.Value = Math.Min(numFuel.Maximum, (decimal)currentCar.CurrentFuel);
-            numPrice.Value = Math.Min(numPrice.Maximum, currentCar.RentCostPerMinute);
+            numMileage.Value = (decimal)currentCar.Mileage;
+            numFuel.Value = (decimal)currentCar.CurrentFuel;
+            numPrice.Value = currentCar.RentCostPerMinute;
         }
 
+       
+
+        
         /// <summary>
-        /// Обработчик нажатия на кнопку ОК. Сохраняет введенные данные.
-        /// </summary>
-        /// <summary>
-        /// Сохраняет изменения и закрывает форму.
+        /// Обработчик нажатия кнопки "Сохранить". Срабатывает валидация.
         /// </summary>
         private void btnOk_Click(object sender, EventArgs e)
         {
+            // Сначала проверяем, всё ли правильно введено
+            if (!ValidateFields())
+            {
+                return;
+            }
+
+            // ТУТ КРОЕТСЯ ОШИБКА: проверь, что эти строки есть
             currentCar.Brand = txtBrand.Text;
             currentCar.LicensePlate = txtLicensePlate.Text;
-            currentCar.Mileage = (int)numMileage.Value;
-            currentCar.AverageConsumption = (double)numConsumption.Value;
+            currentCar.AverageConsumption = (double)numConsumption.Value; // Проверь имя контрола!
             currentCar.CurrentFuel = (double)numFuel.Value;
-            currentCar.RentCostPerMinute = numPrice.Value;
 
-            // ВАЖНО: Устанавливаем результат, чтобы главная форма поняла, что нужно обновиться
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        /// <summary>
+        /// Проверяет корректность всех заполненных полей.
+        /// </summary>
+        private bool ValidateFields()
+        {
+            var isValid = true;
+            errorProvider.Clear(); // Очищаем старые ошибки перед новой проверкой
+
+            if (string.IsNullOrWhiteSpace(txtBrand.Text))
+            {
+                errorProvider.SetError(txtBrand, "Марка не может быть пустой!");
+                isValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtLicensePlate.Text))
+            {
+                errorProvider.SetError(txtLicensePlate, "Введите гос. номер!");
+                isValid = false;
+            }
+
+            if (numPrice.Value <= 0)
+            {
+                errorProvider.SetError(numPrice, "Цена аренды должна быть больше нуля!");
+                isValid = false;
+            }
+
+            return isValid;
         }
     }
 }
