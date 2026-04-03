@@ -1,4 +1,6 @@
-using CarRentalGridForm.UI;
+using System;
+using System.Windows.Forms;
+using CarRentalGridForm.UI; 
 
 namespace CarRentalGridForm
 {
@@ -8,7 +10,6 @@ namespace CarRentalGridForm
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            // Запускаем твою форму по новому адресу
             Application.Run(new CarRentalGridForm.UI.CarRentalGridForm());
         }
     }

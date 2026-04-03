@@ -32,6 +32,8 @@ namespace CarRentalGridForm.UI
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarRentalGridForm));
             dgvCars = new DataGridView();
             colBrand = new DataGridViewTextBoxColumn();
@@ -55,60 +57,78 @@ namespace CarRentalGridForm.UI
             // 
             // dgvCars
             // 
+            dgvCars.AllowDrop = true;
+            dgvCars.AllowUserToAddRows = false;
             dgvCars.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCars.Columns.AddRange(new DataGridViewColumn[] { colBrand, colPlate, colMileage, colConsumption, colFuel, colPrice, colRange, colTotalSum });
             dgvCars.Location = new Point(0, 28);
             dgvCars.Name = "dgvCars";
-            dgvCars.Size = new Size(879, 454);
+            dgvCars.ReadOnly = true;
+            dgvCars.Size = new Size(878, 454);
             dgvCars.TabIndex = 0;
+            dgvCars.CellPainting += dgvCars_CellPainting;
             // 
             // colBrand
             // 
             colBrand.DataPropertyName = "Brand";
             colBrand.HeaderText = "Марка";
             colBrand.Name = "colBrand";
+            colBrand.ReadOnly = true;
             // 
             // colPlate
             // 
             colPlate.DataPropertyName = "LicensePlate";
             colPlate.HeaderText = "Гос номер";
             colPlate.Name = "colPlate";
+            colPlate.ReadOnly = true;
             // 
             // colMileage
             // 
             colMileage.DataPropertyName = "Mileage";
             colMileage.HeaderText = "Пробег (км)";
             colMileage.Name = "colMileage";
+            colMileage.ReadOnly = true;
             // 
             // colConsumption
             // 
             colConsumption.DataPropertyName = "AverageConsumption";
             colConsumption.HeaderText = "Расход (л/100км)";
             colConsumption.Name = "colConsumption";
+            colConsumption.ReadOnly = true;
             // 
             // colFuel
             // 
             colFuel.DataPropertyName = "CurrentFuel";
             colFuel.HeaderText = "Топливо (л)";
             colFuel.Name = "colFuel";
+            colFuel.ReadOnly = true;
             // 
             // colPrice
             // 
             colPrice.DataPropertyName = "RentCostPerMinute";
             colPrice.HeaderText = "Цена (мин)";
             colPrice.Name = "colPrice";
+            colPrice.ReadOnly = true;
             // 
             // colRange
             // 
             colRange.DataPropertyName = "Range";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            colRange.DefaultCellStyle = dataGridViewCellStyle1;
             colRange.HeaderText = "Запас хода (ч)";
             colRange.Name = "colRange";
+            colRange.ReadOnly = true;
             // 
             // colTotalSum
             // 
             colTotalSum.DataPropertyName = "TotalRentSum";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            colTotalSum.DefaultCellStyle = dataGridViewCellStyle2;
             colTotalSum.HeaderText = "Сумма аренды";
             colTotalSum.Name = "colTotalSum";
+            colTotalSum.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -135,7 +155,8 @@ namespace CarRentalGridForm.UI
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
             toolStripButton2.Size = new Size(23, 22);
-            toolStripButton2.Text = "toolStripButton2";
+            toolStripButton2.Text = "Изменить ";
+            toolStripButton2.Click += toolStripButton2_Click;
             // 
             // toolStripButton3
             // 
@@ -161,7 +182,7 @@ namespace CarRentalGridForm.UI
             lblStatusInfo.Size = new Size(234, 17);
             lblStatusInfo.Text = "Всего машин: 0 | Критическое топливо: 0";
             // 
-            // Form1
+            // CarRentalGridForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -169,7 +190,7 @@ namespace CarRentalGridForm.UI
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
             Controls.Add(dgvCars);
-            Name = "Form1";
+            Name = "CarRentalGridForm";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dgvCars).EndInit();
             toolStrip1.ResumeLayout(false);

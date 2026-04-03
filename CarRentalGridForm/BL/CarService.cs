@@ -3,39 +3,33 @@ using CarRentalGridForm.DAL;
 
 namespace CarRentalGridForm.BL
 {
-    /// <summary>
-    /// Сервис для управления бизнес-логикой проката.
-    /// </summary>
     public class CarService
     {
-        private CarRepository repository;
+        private CarRepository carRepository;
 
-        public CarService(CarRepository repo)
+        public CarService(CarRepository repository)
         {
-            repository = repo;
+            carRepository = repository;
         }
 
         /// <summary>
-        /// Возвращает общее количество машин.
+        /// Считает общее количество машин.
         /// </summary>
         public int GetTotalCount()
         {
-            var count = repository.GetCars().Count;
+            var count = carRepository.GetCars().Count;
             return count;
         }
 
         /// <summary>
-        /// Возвращает количество машин с топливом менее 7 литров.
+        /// Считает машины с низким уровнем топлива (меньше 7 литров).
         /// </summary>
-        public int GetCriticalFuelCount()
+        public int GetLowFuelCount()
         {
-            var count = repository.GetCars().Count(c => c.CurrentFuel < 7);
+            var cars = carRepository.GetCars();
+            // Используем LINQ для подсчета
+            var count = cars.Count(c => c.CurrentFuel < 7.0);
             return count;
-        }
-
-        internal object GetLowFuelCount()
-        {
-            throw new NotImplementedException();
         }
     }
 }
