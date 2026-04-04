@@ -15,7 +15,7 @@ namespace CarRentalGridForm
             ICarRepository repository = new CarRepository();
             ICarService service = new CarService(repository);
 
-            Application.Run(new global::CarRentalGridForm.UI.CarRentalGridForm(service));
+            Application.Run(new global::CarRentalGridForm.UI.MainForm(service));
         }
     }
 }
