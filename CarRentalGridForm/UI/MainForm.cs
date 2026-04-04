@@ -1,9 +1,6 @@
-using System;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
 using CarRentalGridForm.Models;
 using CarRentalGridForm.BL.Contracts;
+using CarRentalGridForm.Constants;
 
 namespace CarRentalGridForm.UI
 {
@@ -13,7 +10,7 @@ namespace CarRentalGridForm.UI
     public partial class CarRentalGridForm : Form
     {
         private readonly ICarService carService;
-        private BindingSource bindingSource = null!;
+        private BindingSource bindingSource;
         private decimal maxRentSum;
 
         /// <summary>
@@ -101,31 +98,33 @@ namespace CarRentalGridForm.UI
 
         private void dgvCars_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 7)
+            if (e.RowIndex >= 0 && dgvCars.Columns[e.ColumnIndex].Name == UiConstants.TotalSumColumnName)
             {
-                var grid = (DataGridView)sender;
-
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out var currentSum))
                 {
                     e.PaintBackground(e.CellBounds, true);
 
                     var percentage = maxRentSum > 0 ? (double)(currentSum / maxRentSum) : 0;
 
-                    var red = (int)(255 * percentage);
-                    var green = (int)(200 * (1 - percentage * 0.5));
-                    var blue = (int)(150 * (1 - percentage));
+                    var red = (int)(UiConstants.MaxColorValue * percentage);
+                    var green = (int)(UiConstants.BaseGreenValue * (1 - percentage * 0.5));
+                    var blue = (int)(UiConstants.BaseBlueValue * (1 - percentage));
 
-                    var fillColor = Color.FromArgb(150, red, green, blue);
+                    var fillColor = Color.FromArgb(
+                        UiConstants.AlphaTransparency,
+                        red,
+                        green,
+                        blue);
 
-                    var barWidth = (int)((e.CellBounds.Width - 8) * percentage);
+                    var barWidth = (int)((e.CellBounds.Width - (UiConstants.CellPaddingX * 2)) * percentage);
 
                     using (var brush = new SolidBrush(fillColor))
                     {
                         var rect = new Rectangle(
-                            e.CellBounds.X + 4,
-                            e.CellBounds.Y + 2,
-                            Math.Max(barWidth, 2),
-                            e.CellBounds.Height - 5);
+                            e.CellBounds.X + UiConstants.CellPaddingX,
+                            e.CellBounds.Y + UiConstants.CellPaddingY,
+                            Math.Max(barWidth, UiConstants.MinBarWidth),
+                            e.CellBounds.Height - UiConstants.CellHeightReduction);
 
                         e.Graphics.FillRectangle(brush, rect);
                     }
