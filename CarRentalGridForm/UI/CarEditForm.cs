@@ -1,80 +1,111 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 using CarRentalGridForm.Models;
+using CarRentalGridForm.Helpers;
+using CarRentalGridForm.BL.Contracts;
 
 namespace CarRentalGridForm.UI
 {
     /// <summary>
-    /// Форма для редактирования данных автомобиля с поддержкой валидации.
+    /// Форма для добавления или редактирования данных автомобиля.
     /// </summary>
     public partial class CarEditForm : Form
     {
+        private readonly ICarService carService;
         private Car currentCar;
+        // УДАЛИТЕ эту строку, если она есть:
+        // private ErrorProvider errorProvider;  ← УДАЛИТЬ!
+        private bool isNewCar;
 
-        public CarEditForm(Car car)
+        /// <summary>
+        /// Создаёт экземпляр формы редактирования автомобиля.
+        /// </summary>
+        public CarEditForm(ICarService service, Car car, bool isNew)
         {
             InitializeComponent();
+            carService = service;
             currentCar = car;
+            isNewCar = isNew;
+            // Инициализация делается в Designer.cs
         }
 
         private void CarEditForm_Load(object sender, EventArgs e)
         {
-            // Заполняем поля данными (как делали раньше)
-            txtBrand.Text = currentCar.Brand;
-            txtLicensePlate.Text = currentCar.LicensePlate;
-            numMileage.Value = (decimal)currentCar.Mileage;
-            numFuel.Value = (decimal)currentCar.CurrentFuel;
-            numPrice.Value = currentCar.RentCostPerMinute;
+            Text = isNewCar ? "Добавление автомобиля" : "Редактирование автомобиля";
+
+            CarFormMapper.LoadCarToForm(
+                currentCar,
+                txtBrand,
+                txtLicensePlate,
+                numMileage,
+                numConsumption,
+                numFuel,
+                numPrice);
         }
 
-       
-
-        
-        /// <summary>
-        /// Обработчик нажатия кнопки "Сохранить". Срабатывает валидация.
-        /// </summary>
         private void btnOk_Click(object sender, EventArgs e)
         {
-            // Сначала проверяем, всё ли правильно введено
             if (!ValidateFields())
-            {
                 return;
+
+            CarFormMapper.SaveFormToCar(
+                currentCar,
+                txtBrand.Text.Trim(),
+                txtLicensePlate.Text.Trim().ToUpper(),
+                (int)numMileage.Value,
+                (double)numConsumption.Value,
+                (double)numFuel.Value,
+                numPrice.Value);
+
+            try
+            {
+                if (isNewCar)
+                    carService.AddCar(currentCar);
+                else
+                    carService.UpdateCar(currentCar);
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-            // ТУТ КРОЕТСЯ ОШИБКА: проверь, что эти строки есть
-            currentCar.Brand = txtBrand.Text;
-            currentCar.LicensePlate = txtLicensePlate.Text;
-            currentCar.AverageConsumption = (double)numConsumption.Value; // Проверь имя контрола!
-            currentCar.CurrentFuel = (double)numFuel.Value;
-
-            DialogResult = DialogResult.OK;
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        /// <summary>
-        /// Проверяет корректность всех заполненных полей.
-        /// </summary>
         private bool ValidateFields()
         {
             var isValid = true;
-            errorProvider.Clear(); // Очищаем старые ошибки перед новой проверкой
+            errorProvider.Clear();
 
             if (string.IsNullOrWhiteSpace(txtBrand.Text))
             {
-                errorProvider.SetError(txtBrand, "Марка не может быть пустой!");
+                errorProvider.SetError(txtBrand, "Марка не может быть пустой");
                 isValid = false;
             }
 
             if (string.IsNullOrWhiteSpace(txtLicensePlate.Text))
             {
-                errorProvider.SetError(txtLicensePlate, "Введите гос. номер!");
+                errorProvider.SetError(txtLicensePlate, "Введите гос. номер");
                 isValid = false;
             }
 
-            if (numPrice.Value <= 0)
+            if (!CarValidator.ValidateCarData(
+                txtBrand.Text,
+                txtLicensePlate.Text,
+                (int)numMileage.Value,
+                (double)numConsumption.Value,
+                (double)numFuel.Value,
+                numPrice.Value,
+                out var errorMessage))
             {
-                errorProvider.SetError(numPrice, "Цена аренды должна быть больше нуля!");
                 isValid = false;
             }
 
