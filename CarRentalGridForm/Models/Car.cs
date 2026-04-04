@@ -1,5 +1,10 @@
-﻿namespace CarRentalGridForm.Models
+﻿using CarRentalGridForm.Constants;
+
+namespace CarRentalGridForm.Models
 {
+    /// <summary>
+    /// Модель автомобиля для системы проката.
+    /// </summary>
     public class Car
     {
         /// <summary>
@@ -44,10 +49,12 @@
         {
             get
             {
-                if (AverageConsumption <= 0)
+                if (AverageConsumption <= CarLimits.MinConsumptionThreshold)
                     return 0;
 
-                return Math.Round((CurrentFuel / AverageConsumption) * 100, 2);
+                return Math.Round(
+                    (CurrentFuel / AverageConsumption) * CarLimits.FuelConsumptionMultiplier,
+                    CarLimits.DecimalPrecision);
             }
         }
 

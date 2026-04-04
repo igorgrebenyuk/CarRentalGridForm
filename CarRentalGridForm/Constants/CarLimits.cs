@@ -97,5 +97,20 @@
         /// </summary>
         public static string GetRentCostError() =>
             $"Стоимость должна быть от {MinRentCost} до {MaxRentCost} руб";
+
+        /// <summary>
+        /// Стандартный множитель для расчёта расхода топлива на 100 км.
+        /// </summary>
+        public const double FuelConsumptionMultiplier = 100.0;
+
+        /// <summary>
+        /// Количество десятичных знаков для округления расчётных значений.
+        /// </summary>
+        public const int DecimalPrecision = 2;
+
+        /// <summary>
+        /// Минимальное значение для проверки корректности расхода топлива.
+        /// </summary>
+        public const double MinConsumptionThreshold = 0.0;
     }
 }
