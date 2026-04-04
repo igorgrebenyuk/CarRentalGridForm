@@ -4,7 +4,7 @@ using CarRentalGridForm.Models;
 
 namespace CarRentalGridForm.UI
 {
-    partial class CarRentalGridForm
+    partial class MainForm : Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,7 +34,7 @@ namespace CarRentalGridForm.UI
         {
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarRentalGridForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             dgvCars = new DataGridView();
             colBrand = new DataGridViewTextBoxColumn();
             colPlate = new DataGridViewTextBoxColumn();

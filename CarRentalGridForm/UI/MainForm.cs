@@ -7,7 +7,7 @@ namespace CarRentalGridForm.UI
     /// <summary>
     /// Главная форма приложения для управления парком автомобилей.
     /// </summary>
-    public partial class CarRentalGridForm : Form
+    public partial class MainForm : Form
     {
         private readonly ICarService carService;
         private BindingSource bindingSource;
@@ -16,7 +16,7 @@ namespace CarRentalGridForm.UI
         /// <summary>
         /// Инициализирует главную форму с сервисом автомобилей.
         /// </summary>
-        public CarRentalGridForm(ICarService service)
+        public MainForm(ICarService service)
         {
             InitializeComponent();
             carService = service;
