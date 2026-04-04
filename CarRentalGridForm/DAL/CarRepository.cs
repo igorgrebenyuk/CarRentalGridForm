@@ -22,20 +22,16 @@ namespace CarRentalGridForm.DAL
         /// <summary>
         /// Возвращает список всех автомобилей из хранилища.
         /// </summary>
-        /// <returns>Список всех автомобилей.</returns>
         public List<Car> GetAll() => new(cars);
 
         /// <summary>
         /// Возвращает автомобиль по уникальному идентификатору.
         /// </summary>
-        /// <param name="id">Идентификатор автомобиля.</param>
-        /// <returns>Автомобиль с указанным ID или null, если не найден.</returns>
         public Car GetById(int id) => cars.FirstOrDefault(c => c.Id == id);
 
         /// <summary>
         /// Добавляет новый автомобиль в хранилище с присвоением уникального ID.
         /// </summary>
-        /// <param name="car">Автомобиль для добавления.</param>
         public void Add(Car car)
         {
             car.Id = nextId++;
@@ -45,7 +41,6 @@ namespace CarRentalGridForm.DAL
         /// <summary>
         /// Обновляет данные существующего автомобиля в хранилище.
         /// </summary>
-        /// <param name="car">Автомобиль с обновлёнными данными.</param>
         public void Update(Car car)
         {
             var index = cars.FindIndex(c => c.Id == car.Id);
@@ -58,7 +53,6 @@ namespace CarRentalGridForm.DAL
         /// <summary>
         /// Удаляет автомобиль из хранилища по уникальному идентификатору.
         /// </summary>
-        /// <param name="id">Идентификатор автомобиля для удаления.</param>
         public void Delete(int id) => cars.RemoveAll(c => c.Id == id);
 
         private void SeedInitialData()

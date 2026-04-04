@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using CarRentalGridForm.Models;
+﻿using CarRentalGridForm.Models;
 using CarRentalGridForm.Helpers;
 using CarRentalGridForm.BL.Contracts;
 
@@ -13,8 +11,6 @@ namespace CarRentalGridForm.UI
     {
         private readonly ICarService carService;
         private Car currentCar;
-        // УДАЛИТЕ эту строку, если она есть:
-        // private ErrorProvider errorProvider;  ← УДАЛИТЬ!
         private bool isNewCar;
 
         /// <summary>
@@ -26,7 +22,6 @@ namespace CarRentalGridForm.UI
             carService = service;
             currentCar = car;
             isNewCar = isNew;
-            // Инициализация делается в Designer.cs
         }
 
         private void CarEditForm_Load(object sender, EventArgs e)

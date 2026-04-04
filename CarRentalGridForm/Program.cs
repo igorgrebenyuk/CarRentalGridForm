@@ -1,6 +1,3 @@
-using System;
-using System.Windows.Forms;
-using CarRentalGridForm.UI;
 using CarRentalGridForm.BL;
 using CarRentalGridForm.DAL;
 using CarRentalGridForm.BL.Contracts;
@@ -15,7 +12,6 @@ namespace CarRentalGridForm
         {
             ApplicationConfiguration.Initialize();
 
-            // Инициализация слоёв
             ICarRepository repository = new CarRepository();
             ICarService service = new CarService(repository);
 
