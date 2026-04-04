@@ -31,6 +31,7 @@ namespace CarRentalGridForm.UI
             bindingSource = new BindingSource();
             dgvCars.DataSource = bindingSource;
             dgvCars.AutoGenerateColumns = false;
+            dgvCars.CellPainting += dgvCars_CellPainting;
         }
 
         private void LoadData()
@@ -98,7 +99,8 @@ namespace CarRentalGridForm.UI
 
         private void dgvCars_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvCars.Columns[e.ColumnIndex].Name == UiConstants.TotalSumColumnName)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 &&
+                dgvCars.Columns[e.ColumnIndex].Name == UiConstants.TotalSumColumnName)
             {
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out var currentSum))
                 {
@@ -106,16 +108,12 @@ namespace CarRentalGridForm.UI
 
                     var percentage = maxRentSum > 0 ? (double)(currentSum / maxRentSum) : 0;
 
+                    // Расчет цвета
                     var red = (int)(UiConstants.MaxColorValue * percentage);
                     var green = (int)(UiConstants.BaseGreenValue * (1 - percentage * 0.5));
                     var blue = (int)(UiConstants.BaseBlueValue * (1 - percentage));
 
-                    var fillColor = Color.FromArgb(
-                        UiConstants.AlphaTransparency,
-                        red,
-                        green,
-                        blue);
-
+                    var fillColor = Color.FromArgb(UiConstants.AlphaTransparency, red, green, blue);
                     var barWidth = (int)((e.CellBounds.Width - (UiConstants.CellPaddingX * 2)) * percentage);
 
                     using (var brush = new SolidBrush(fillColor))
