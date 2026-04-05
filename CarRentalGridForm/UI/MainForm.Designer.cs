@@ -1,8 +1,4 @@
-﻿using CarRentalGridForm.UI;
-using CarRentalGridForm.DAL;
-using CarRentalGridForm.Models;
-
-namespace CarRentalGridForm.UI
+﻿namespace CarRentalGridForm.UI
 {
     partial class MainForm : Form
     {
