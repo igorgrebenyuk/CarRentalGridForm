@@ -1,17 +1,29 @@
-namespace CarRentalGridForm.UI
+using CarRentalGridForm.BL;
+using CarRentalGridForm.BL.Contracts;
+using CarRentalGridForm.DAL;
+using CarRentalGridForm.DAL.Contracts;
+using CarRentalGridForm.UI;
+
+
+namespace CarRentalGridForm
 {
+    /// <summary>
+    /// Главный класс приложения, содержащий точку входа.
+    /// </summary>
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Главная точка входа в приложение.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            ICarRepository repository = new CarRepository();
+            ICarService service = new CarService(repository);
+
+            Application.Run(new MainForm(service));
         }
     }
 }
