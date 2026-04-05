@@ -7,5 +7,4 @@
   <Project Path="CarRentalGridForm.Helpers/CarRentalGridForm.Helpers.csproj" Id="aeec77de-44b3-4817-890d-11bbd0e11c7d" />
   <Project Path="CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" Id="b2d925ee-0b61-498a-bf80-f134b6e70452" />
   <Project Path="CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" Id="8b805538-78b3-44ab-a532-7fae207bc2a0" />
-  <Project Path="CarRentalGridForm/CarRentalGridForm.csproj" />
 </Solution>

@@ -8,4 +8,22 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalGridForm.BL.Contracts\CarRentalGridForm.BL.Contracts.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.BL\CarRentalGridForm.BL.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.Constants\CarRentalGridForm.Constants.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.DAL\CarRentalGridForm.DAL.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.Helpers\CarRentalGridForm.Helpers.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CarEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

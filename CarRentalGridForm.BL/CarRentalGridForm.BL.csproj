@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalGridForm.BL.Contracts\CarRentalGridForm.BL.Contracts.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.Constants\CarRentalGridForm.Constants.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.DAL.Contracts\CarRentalGridForm.DAL.Contracts.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
+  </ItemGroup>
+
 </Project>

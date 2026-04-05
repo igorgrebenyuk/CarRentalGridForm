@@ -1,7 +1,7 @@
 ﻿using CarRentalGridForm.Models;
-using CarRentalGridForm.BL.Contracts;
 using CarRentalGridForm.DAL.Contracts;
 using CarRentalGridForm.Constants;
+using CarRentalGridForm.BL.Contracts;
 
 namespace CarRentalGridForm.BL
 {

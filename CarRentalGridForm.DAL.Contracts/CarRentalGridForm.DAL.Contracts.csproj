@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
+  </ItemGroup>
+
 </Project>

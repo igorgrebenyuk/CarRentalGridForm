@@ -1,8 +1,8 @@
 using CarRentalGridForm.BL;
 using CarRentalGridForm.BL.Contracts;
-using CarRentalGridForm.DAL;
 using CarRentalGridForm.DAL.Contracts;
 using CarRentalGridForm.UI;
+using CarRentalGridForm.DAL; 
 
 
 namespace CarRentalGridForm
