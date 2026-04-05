@@ -108,7 +108,6 @@ namespace CarRentalGridForm.UI
 
                     var percentage = maxRentSum > 0 ? (double)(currentSum / maxRentSum) : 0;
 
-                    // Расчет цвета
                     var red = (int)(UiConstants.MaxColorValue * percentage);
                     var green = (int)(UiConstants.BaseGreenValue * (1 - percentage * 0.5));
                     var blue = (int)(UiConstants.BaseBlueValue * (1 - percentage));
