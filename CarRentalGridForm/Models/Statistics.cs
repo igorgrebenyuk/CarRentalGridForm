@@ -1,5 +1,8 @@
 ﻿namespace CarRentalGridForm.Models
 {
+    /// <summary>
+    /// Класс, содержащий статистику по парку автомобилей.
+    /// </summary>
     public class Statistics
     {
         /// <summary>

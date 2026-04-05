@@ -22,6 +22,8 @@ namespace CarRentalGridForm.UI
             carService = service;
             currentCar = car;
             isNewCar = isNew;
+
+            errorProvider.ContainerControl = this;
         }
 
         private void CarEditForm_Load(object sender, EventArgs e)
@@ -41,7 +43,9 @@ namespace CarRentalGridForm.UI
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (!ValidateFields())
+            {
                 return;
+            }
 
             CarFormMapper.SaveFormToCar(
                 currentCar,
@@ -55,9 +59,13 @@ namespace CarRentalGridForm.UI
             try
             {
                 if (isNewCar)
+                {
                     carService.AddCar(currentCar);
+                }
                 else
+                {
                     carService.UpdateCar(currentCar);
+                }
 
                 DialogResult = DialogResult.OK;
                 Close();
@@ -89,18 +97,6 @@ namespace CarRentalGridForm.UI
             if (string.IsNullOrWhiteSpace(txtLicensePlate.Text))
             {
                 errorProvider.SetError(txtLicensePlate, "Введите гос. номер");
-                isValid = false;
-            }
-
-            if (!CarValidator.ValidateCarData(
-                txtBrand.Text,
-                txtLicensePlate.Text,
-                (int)numMileage.Value,
-                (double)numConsumption.Value,
-                (double)numFuel.Value,
-                numPrice.Value,
-                out var errorMessage))
-            {
                 isValid = false;
             }
 

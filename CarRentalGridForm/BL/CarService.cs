@@ -1,6 +1,7 @@
 ﻿using CarRentalGridForm.Models;
 using CarRentalGridForm.BL.Contracts;
 using CarRentalGridForm.DAL.Contracts;
+using CarRentalGridForm.Constants;
 
 namespace CarRentalGridForm.BL
 {
@@ -70,7 +71,7 @@ namespace CarRentalGridForm.BL
             return new Statistics
             {
                 TotalCars = cars.Count,
-                LowFuelCars = cars.Count(c => c.CurrentFuel < 7.0),
+                LowFuelCars = cars.Count(c => c.CurrentFuel < CarLimits.CriticalFuelLevel),
                 TotalValue = cars.Sum(c => c.TotalRentSum)
             };
         }
@@ -78,22 +79,34 @@ namespace CarRentalGridForm.BL
         private void ValidateCar(Car car)
         {
             if (string.IsNullOrWhiteSpace(car.Brand))
+            {
                 throw new ArgumentException("Марка автомобиля не может быть пустой");
+            }
 
             if (string.IsNullOrWhiteSpace(car.LicensePlate))
+            { 
                 throw new ArgumentException("Гос. номер не может быть пустым");
+            }
 
             if (car.Mileage < 0)
+            { 
                 throw new ArgumentException("Пробег не может быть отрицательным");
+            }
 
-            if (car.AverageConsumption <= 0)
+            if (car.AverageConsumption <= CarLimits.MinConsumption)
+            { 
                 throw new ArgumentException("Расход топлива должен быть больше нуля");
+            }
 
-            if (car.CurrentFuel < 0 || car.CurrentFuel > 100)
-                throw new ArgumentException("Топливо должно быть в диапазоне 0-100 литров");
+            if (car.CurrentFuel < CarLimits.MinFuel || car.CurrentFuel > CarLimits.MaxFuel)
+            { 
+                throw new ArgumentException("Топливо должно быть в диапазоне 0-100 литров"); 
+            }
 
-            if (car.RentCostPerMinute <= 0)
-                throw new ArgumentException("Стоимость аренды должна быть больше нуля");
+            if (car.RentCostPerMinute <= CarLimits.MinRentCost)
+            { 
+                throw new ArgumentException("Стоимость аренды должна быть больше нуля"); 
+            }
         }
     }
 }
