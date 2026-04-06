@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CarEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="CarEditForm.cs" />
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

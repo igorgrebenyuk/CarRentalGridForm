@@ -94,8 +94,13 @@ namespace CarRentalGridForm.BL
             }
 
             if (car.AverageConsumption <= CarLimits.MinConsumption)
-            { 
-                throw new ArgumentException("Расход топлива должен быть больше нуля");
+            {
+                throw new ArgumentException($"Расход топлива должен быть больше {CarLimits.MinConsumption} литра");
+            }
+
+            if (car.AverageConsumption >= CarLimits.MaxConsumption)
+            {
+                throw new ArgumentException($"Расход топлива должен быть меньше {CarLimits.MaxConsumption} литров");
             }
 
             if (car.CurrentFuel < CarLimits.MinFuel || car.CurrentFuel > CarLimits.MaxFuel)

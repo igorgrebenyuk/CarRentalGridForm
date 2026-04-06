@@ -44,12 +44,12 @@
             btnOk = new Button();
             btnCancel = new Button();
             label7 = new Label();
-            errorProvider = new ErrorProvider(components);
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)numMileage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numConsumption).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numFuel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // numMileage
@@ -186,9 +186,9 @@
             label7.TabIndex = 11;
             label7.Text = "Редактирование автомобиля";
             // 
-            // errorProvider
+            // errorProvider1
             // 
-            errorProvider.ContainerControl = this;
+            errorProvider1.ContainerControl = this;
             // 
             // CarEditForm
             // 
@@ -220,7 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)numConsumption).EndInit();
             ((System.ComponentModel.ISupportInitialize)numFuel).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,6 +242,6 @@
         private Button btnOk;
         private Button btnCancel;
         private Label label7;
-        private ErrorProvider errorProvider;
+        private ErrorProvider errorProvider1;
     }
 }
