@@ -16,7 +16,7 @@ namespace CarRentalGridForm
         /// Главная точка входа в приложение.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             ApplicationConfiguration.Initialize();
 
