@@ -51,8 +51,12 @@
         public const string TotalSumColumnName = "colTotalSum";
 
         /// <summary>
-        /// Критический уровень топлива для подсветки (литров).
+        /// Коэффициент затемнения зелёного канала для градиента.
         /// </summary>
-        public const double CriticalFuelLevel = 7.0;
+        public const double GreenChannelFactor = 0.5;
+        /// <summary>
+        /// Количество сторон для применения отступов (лево + право).
+        /// </summary>
+        public const int PaddingSidesCount = 2;
     }
 }

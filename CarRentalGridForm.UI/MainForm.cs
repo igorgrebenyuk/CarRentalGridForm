@@ -109,11 +109,11 @@ namespace CarRentalGridForm.UI
                     var percentage = maxRentSum > 0 ? (double)(currentSum / maxRentSum) : 0;
 
                     var red = (int)(UiConstants.MaxColorValue * percentage);
-                    var green = (int)(UiConstants.BaseGreenValue * (1 - percentage * 0.5));
+                    var green = (int)(UiConstants.BaseGreenValue * (1 - percentage * UiConstants.GreenChannelFactor));
                     var blue = (int)(UiConstants.BaseBlueValue * (1 - percentage));
 
                     var fillColor = Color.FromArgb(UiConstants.AlphaTransparency, red, green, blue);
-                    var barWidth = (int)((e.CellBounds.Width - (UiConstants.CellPaddingX * 2)) * percentage);
+                    var barWidth = (int)((e.CellBounds.Width - (UiConstants.CellPaddingX * UiConstants.PaddingSidesCount)) * percentage);
 
                     using (var brush = new SolidBrush(fillColor))
                     {
