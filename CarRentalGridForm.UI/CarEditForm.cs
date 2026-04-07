@@ -223,17 +223,29 @@ namespace CarRentalGridForm.UI
             errorProvider.Clear();
 
             foreach (Binding binding in txtBrand.DataBindings)
+            {
                 binding.WriteValue();
+            }
             foreach (Binding binding in txtLicensePlate.DataBindings)
-                binding.WriteValue();
+            {
+                binding.WriteValue(); 
+            }
             foreach (Binding binding in numMileage.DataBindings)
+            {
                 binding.WriteValue();
+            }
             foreach (Binding binding in numConsumption.DataBindings)
-                binding.WriteValue();
+            { 
+                binding.WriteValue(); 
+            }
             foreach (Binding binding in numFuel.DataBindings)
-                binding.WriteValue();
+            { 
+                binding.WriteValue(); 
+            }
             foreach (Binding binding in numPrice.DataBindings)
+            {
                 binding.WriteValue();
+            }
 
             bool hasErrors = !string.IsNullOrEmpty(errorProvider.GetError(txtBrand)) ||
                            !string.IsNullOrEmpty(errorProvider.GetError(txtLicensePlate)) ||
