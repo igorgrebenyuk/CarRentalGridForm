@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalGridForm.DAL.Contracts\CarRentalGridForm.DAL.Contracts.csproj" />
+    <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
+  </ItemGroup>
+
+</Project>
