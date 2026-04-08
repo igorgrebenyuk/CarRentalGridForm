@@ -1,8 +1,8 @@
 using CarRentalGridForm.BL;
 using CarRentalGridForm.BL.Contracts;
-using CarRentalGridForm.DAL;
 using CarRentalGridForm.DAL.Contracts;
 using CarRentalGridForm.UI;
+using CarRentalGridForm.DAL; 
 
 
 namespace CarRentalGridForm
@@ -16,7 +16,7 @@ namespace CarRentalGridForm
         /// Главная точка входа в приложение.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             ApplicationConfiguration.Initialize();
 
