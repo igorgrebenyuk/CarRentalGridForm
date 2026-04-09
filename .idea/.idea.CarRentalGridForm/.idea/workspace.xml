@@ -8,7 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="" />
+    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Dev__NuGetCarRental",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#3 on Dev__NuGetCarRental&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.CarRentalGridForm">
     <configuration name="CarRentalGridForm" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -124,7 +129,10 @@
       <workItem from="1775581187444" duration="84000" />
       <workItem from="1775660795330" duration="126000" />
       <workItem from="1775678870487" duration="2077000" />
-      <workItem from="1775685044573" duration="403000" />
+      <workItem from="1775685044573" duration="481000" />
+      <workItem from="1775742202963" duration="18000" />
+      <workItem from="1775752791056" duration="5066000" />
+      <workItem from="1775761491571" duration="3617000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -278,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775685091253</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="проверка">
+      <option name="closed" value="true" />
+      <created>1775685454747</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1775685454747</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +334,8 @@
     <MESSAGE value="убрал кар валидатор и переделал валидацию через биндинги" />
     <MESSAGE value="фигурные скобки добавил" />
     <MESSAGE value="Проверка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Проверка" />
+    <MESSAGE value="проверка" />
+    <option name="LAST_COMMIT_MESSAGE" value="проверка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
