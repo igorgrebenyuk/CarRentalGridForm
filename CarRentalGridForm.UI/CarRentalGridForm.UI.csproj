@@ -13,7 +13,6 @@
     <ProjectReference Include="..\CarRentalGridForm.BL\CarRentalGridForm.BL.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.Constants\CarRentalGridForm.Constants.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.DAL\CarRentalGridForm.DAL.csproj" />
-    <ProjectReference Include="..\CarRentalGridForm.Helpers\CarRentalGridForm.Helpers.csproj" />
     <PackageReference Include="CarRentalGridForm.Models" Version="1.0.1" />
   </ItemGroup>
 
