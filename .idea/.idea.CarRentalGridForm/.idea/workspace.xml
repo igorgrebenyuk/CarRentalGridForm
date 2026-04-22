@@ -10,10 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.BL/CarRentalGridForm.BL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.BL/CarRentalGridForm.BL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Models/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +49,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#3 on Dev__NuGetCarRental&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Unit__Tests__Car__Rental&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -136,6 +132,7 @@
       <workItem from="1775761491571" duration="3663000" />
       <workItem from="1775830773683" duration="1739000" />
       <workItem from="1775843418683" duration="3246000" />
+      <workItem from="1776857725630" duration="1070000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -305,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775765617603</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="создаю ПР">
+      <option name="closed" value="true" />
+      <created>1776857901859</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1776857901860</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +352,8 @@
     <MESSAGE value="Проверка" />
     <MESSAGE value="проверка" />
     <MESSAGE value="эту часть сделал" />
-    <option name="LAST_COMMIT_MESSAGE" value="эту часть сделал" />
+    <MESSAGE value="создаю ПР" />
+    <option name="LAST_COMMIT_MESSAGE" value="создаю ПР" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

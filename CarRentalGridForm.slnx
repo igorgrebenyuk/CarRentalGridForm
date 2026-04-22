@@ -5,5 +5,6 @@
   <Project Path="CarRentalGridForm.DAL.Contracts/CarRentalGridForm.DAL.Contracts.csproj" Id="ab822b9b-e8a2-4802-84a1-f87dae389413" />
   <Project Path="CarRentalGridForm.DAL/CarRentalGridForm.DAL.csproj" Id="f68d984b-f277-4718-b52e-db6d18974e83" />
   <Project Path="CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" Id="b2d925ee-0b61-498a-bf80-f134b6e70452" />
+  <Project Path="CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj" Id="9faa9b93-5142-40cd-927f-32730a1d440c" />
   <Project Path="CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" Id="8b805538-78b3-44ab-a532-7fae207bc2a0" />
 </Solution>
