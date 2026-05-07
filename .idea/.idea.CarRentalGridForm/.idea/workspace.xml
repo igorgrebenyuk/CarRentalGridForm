@@ -11,9 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRepositoryTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.BL/CarRentalGridForm.BL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.BL/CarRentalGridForm.BL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.BL/CarServiceLogWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.BL/CarServiceLogWrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.UI/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,21 +49,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#5 on Unit__Tests__Car__Rental&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "8a107f78-20f5-4ab2-bc5f-163adac46e15.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "#9 on Dev__Logging&&Collection",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.CarRentalGridForm">
     <configuration name="CarRentalGridForm" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -166,6 +168,8 @@
       <workItem from="1776973992035" duration="145000" />
       <workItem from="1777020468457" duration="4824000" />
       <workItem from="1777141720388" duration="310000" />
+      <workItem from="1778103657776" duration="206000" />
+      <workItem from="1778178291572" duration="194000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -359,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776869992305</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Создал класс для логирования БЛ">
+      <option name="closed" value="true" />
+      <created>1778103711346</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1778103711346</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +416,8 @@
     <MESSAGE value="создаю ПР" />
     <MESSAGE value="добавил классы для юнит тестов" />
     <MESSAGE value="Добавил все нужные нагет пакеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил все нужные нагет пакеты" />
+    <MESSAGE value="Создал класс для логирования БЛ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал класс для логирования БЛ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
