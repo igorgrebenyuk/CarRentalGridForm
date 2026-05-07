@@ -6,31 +6,36 @@ using CarRentalGridForm.DAL;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Extensions.Logging;
-using static System.Net.Mime.MediaTypeNames;
-
 
 namespace CarRentalGridForm
 {
-    /// <summary>
-    /// Главный класс приложения, содержащий точку входа.
-    /// </summary>
     internal static class Program
     {
-        /// <summary>
-        /// Главная точка входа в приложение.
-        /// </summary>
         [STAThread]
         private static void Main()
         {
-            using var log = new LoggerConfiguration()
-            .MinimumLevel.Debug()
-            .WriteTo.Debug()
-            .WriteTo.File("logs\\app.log", rollingInterval: RollingInterval.Day)
-            .CreateLogger();
+            var seqApiKey = "mqoY4hJHcRmN6lLAXLgL";
+
+            var serilogLogger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Debug()
+                .WriteTo.Seq(
+                    serverUrl: "http://localhost:5341",
+                    apiKey: seqApiKey,
+                    restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Debug
+                )
+                .WriteTo.File("logs/car-perf-.log", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
+            var loggerFactory = new SerilogLoggerFactory(serilogLogger);
+            var logger = loggerFactory.CreateLogger<CarServiceLogWrapper>();
+
             ApplicationConfiguration.Initialize();
 
             ICarRepository repository = new CarRepository();
             ICarService service = new CarService(repository);
+
+            // Создаём wrapper для логирования
             ICarService loggingWrapper = new CarServiceLogWrapper(service, logger);
 
             Application.Run(new MainForm(loggingWrapper));

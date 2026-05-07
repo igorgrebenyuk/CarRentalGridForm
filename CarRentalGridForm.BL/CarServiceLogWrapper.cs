@@ -8,7 +8,7 @@ namespace CarRentalGridForm.BL
     /// <summary>
     /// Враппер для логирования производительности методов CarService
     /// </summary>
-    public class CarServiceLogWrapper
+    public class CarServiceLogWrapper : ICarService
     {
         private readonly ICarService carService;
         private readonly ILogger<CarServiceLogWrapper> logger;
