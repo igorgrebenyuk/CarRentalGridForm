@@ -35,7 +35,6 @@ namespace CarRentalGridForm
             ICarRepository repository = new CarRepository();
             ICarService service = new CarService(repository);
 
-            // Создаём wrapper для логирования
             ICarService loggingWrapper = new CarServiceLogWrapper(service, logger);
 
             Application.Run(new MainForm(loggingWrapper));
