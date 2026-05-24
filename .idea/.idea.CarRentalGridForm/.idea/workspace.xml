@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.BL/CarServiceLogWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.BL/CarServiceLogWrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.UI/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +171,7 @@
       <workItem from="1778103657776" duration="206000" />
       <workItem from="1778178291572" duration="3373000" />
       <workItem from="1778185275292" duration="116000" />
+      <workItem from="1778185905373" duration="549000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -383,7 +381,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778178596660</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера">
+      <option name="closed" value="true" />
+      <created>1778186277425</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1778186277425</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Чуть-чуть поправил">
+      <option name="closed" value="true" />
+      <created>1778186344443</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1778186344443</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,8 +418,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Поправил юзинги" />
-    <MESSAGE value="исправил магические числа" />
     <MESSAGE value="в кар.cs тоже поправил" />
     <MESSAGE value="Поправил метод CellPainting" />
     <MESSAGE value="Сменил название формы на более коректное" />
@@ -429,7 +441,9 @@
     <MESSAGE value="Добавил все нужные нагет пакеты" />
     <MESSAGE value="Создал класс для логирования БЛ" />
     <MESSAGE value="Написал  логеры для БЛ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Написал  логеры для БЛ" />
+    <MESSAGE value="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера" />
+    <MESSAGE value="Чуть-чуть поправил" />
+    <option name="LAST_COMMIT_MESSAGE" value="Чуть-чуть поправил" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -16,7 +16,6 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Конструктор, принимающий сервис и логгер
         /// </summary>
-
         public CarServiceLogWrapper(ICarService carService, ILogger<CarServiceLogWrapper> logger)
         {
             this.carService = carService;
@@ -50,10 +49,10 @@ namespace CarRentalGridForm.BL
 
             watch.Stop();
             var found = result != null;
-            logger.LogInformation("GetCarById executed in {ElapsedMilliseconds} ms for ID {CarId}"
-                , watch.ElapsedMilliseconds
-                , found
-                , id);
+            logger.LogInformation("GetCarById executed in {ElapsedMilliseconds} ms for ID {CarId}",
+                watch.ElapsedMilliseconds, 
+                found, 
+                id);
             return result;
         }
 
@@ -71,10 +70,10 @@ namespace CarRentalGridForm.BL
             var brand = car != null ? car.Brand : null;
             var licensePlate = car != null ? car.LicensePlate : null;
             logger.LogDebug(
-                "CarService.AddCar: {ElapsedMilliseconds} ms. Brand: {Brand}, LicensePlate: {LicensePlate}"
-                , watch.ElapsedMilliseconds
-                , brand
-                , licensePlate);
+                "CarService.AddCar: {ElapsedMilliseconds} ms. Brand: {Brand}, LicensePlate: {LicensePlate}", 
+                watch.ElapsedMilliseconds, 
+                brand, 
+                licensePlate);
         }
 
         /// <summary>
@@ -91,10 +90,10 @@ namespace CarRentalGridForm.BL
             var brand = car != null ? car.Brand : null;
             var id = car != null ? car.Id : 0;
             logger.LogDebug(
-                "CarService.UpdateCar: {ElapsedMilliseconds} ms. Id: {Id}, Brand: {Brand}"
-                , watch.ElapsedMilliseconds
-                , id
-                , brand);
+                "CarService.UpdateCar: {ElapsedMilliseconds} ms. Id: {Id}, Brand: {Brand}", 
+                watch.ElapsedMilliseconds, 
+                id, 
+                brand);
         }
 
         /// <summary>
@@ -131,11 +130,11 @@ namespace CarRentalGridForm.BL
             var lowFuelCars = result != null ? result.LowFuelCars : 0;
 
             logger.LogDebug(
-                "CarService.GetStatistics: {ElapsedMilliseconds} ms. TotalCars: {TotalCars}, TotalValue: {TotalValue}, LowFuelCars: {LowFuelCars}"
-                , watch.ElapsedMilliseconds
-                , totalCars
-                , totalValue
-                , lowFuelCars);
+                "CarService.GetStatistics: {ElapsedMilliseconds} ms. TotalCars: {TotalCars}, TotalValue: {TotalValue}, LowFuelCars: {LowFuelCars}", 
+                watch.ElapsedMilliseconds, 
+                totalCars, 
+                totalValue, 
+                lowFuelCars);
 
             return result;
         }
