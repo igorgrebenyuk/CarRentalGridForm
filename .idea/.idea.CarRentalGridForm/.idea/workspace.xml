@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="Создал ветвь для ПР">
+    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.slnx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +174,7 @@
       <workItem from="1778185275292" duration="116000" />
       <workItem from="1778185905373" duration="549000" />
       <workItem from="1779620630731" duration="136000" />
-      <workItem from="1779621191939" duration="1240000" />
+      <workItem from="1779621191939" duration="3258000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -399,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778186344443</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Коммит для создания ПР">
+      <option name="closed" value="true" />
+      <created>1779623493090</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1779623493091</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +429,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Поправил метод CellPainting" />
     <MESSAGE value="Сменил название формы на более коректное" />
     <MESSAGE value="и программ.cs тоже поправил" />
     <MESSAGE value="некоторые ошибки исправил" />
@@ -445,7 +453,8 @@
     <MESSAGE value="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера" />
     <MESSAGE value="Чуть-чуть поправил" />
     <MESSAGE value="Создал ветвь для ПР" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал ветвь для ПР" />
+    <MESSAGE value="Коммит для создания ПР" />
+    <option name="LAST_COMMIT_MESSAGE" value="Коммит для создания ПР" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
