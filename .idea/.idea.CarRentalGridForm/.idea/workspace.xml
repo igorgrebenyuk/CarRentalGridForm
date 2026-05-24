@@ -11,14 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarRepositoryTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Tests/CarServiceTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,11 +50,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Project.CarRentalGridForm.executor&quot;: &quot;Run&quot;,
+    &quot;8a107f78-20f5-4ab2-bc5f-163adac46e15.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#5 on Unit__Tests__Car__Rental&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#9 on Dev__Logging&amp;&amp;Collection&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -166,6 +168,10 @@
       <workItem from="1776973992035" duration="145000" />
       <workItem from="1777020468457" duration="4824000" />
       <workItem from="1777141720388" duration="310000" />
+      <workItem from="1778103657776" duration="206000" />
+      <workItem from="1778178291572" duration="3373000" />
+      <workItem from="1778185275292" duration="116000" />
+      <workItem from="1778185905373" duration="549000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -359,7 +365,39 @@
       <option name="project" value="LOCAL" />
       <updated>1776869992305</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Создал класс для логирования БЛ">
+      <option name="closed" value="true" />
+      <created>1778103711346</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1778103711346</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Написал  логеры для БЛ">
+      <option name="closed" value="true" />
+      <created>1778178596660</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1778178596660</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера">
+      <option name="closed" value="true" />
+      <created>1778186277425</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1778186277425</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Чуть-чуть поправил">
+      <option name="closed" value="true" />
+      <created>1778186344443</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1778186344443</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,9 +418,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Разделил всё по слоям" />
-    <MESSAGE value="Поправил юзинги" />
-    <MESSAGE value="исправил магические числа" />
     <MESSAGE value="в кар.cs тоже поправил" />
     <MESSAGE value="Поправил метод CellPainting" />
     <MESSAGE value="Сменил название формы на более коректное" />
@@ -404,7 +439,11 @@
     <MESSAGE value="создаю ПР" />
     <MESSAGE value="добавил классы для юнит тестов" />
     <MESSAGE value="Добавил все нужные нагет пакеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил все нужные нагет пакеты" />
+    <MESSAGE value="Создал класс для логирования БЛ" />
+    <MESSAGE value="Написал  логеры для БЛ" />
+    <MESSAGE value="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера" />
+    <MESSAGE value="Чуть-чуть поправил" />
+    <option name="LAST_COMMIT_MESSAGE" value="Чуть-чуть поправил" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

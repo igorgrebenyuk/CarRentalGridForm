@@ -11,6 +11,7 @@
     <ProjectReference Include="..\CarRentalGridForm.Constants\CarRentalGridForm.Constants.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.DAL.Contracts\CarRentalGridForm.DAL.Contracts.csproj" />
     <PackageReference Include="CarRentalGridForm.Models" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.7" />
   </ItemGroup>
 
 </Project>
