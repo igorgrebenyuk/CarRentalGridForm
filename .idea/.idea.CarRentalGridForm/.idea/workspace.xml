@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
+    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="Создал ветвь для ПР">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#9 on Dev__Logging&amp;&amp;Collection&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dev__EfCore&amp;&amp;Assync&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -172,6 +172,8 @@
       <workItem from="1778178291572" duration="3373000" />
       <workItem from="1778185275292" duration="116000" />
       <workItem from="1778185905373" duration="549000" />
+      <workItem from="1779620630731" duration="136000" />
+      <workItem from="1779621191939" duration="1240000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -418,7 +420,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="в кар.cs тоже поправил" />
     <MESSAGE value="Поправил метод CellPainting" />
     <MESSAGE value="Сменил название формы на более коректное" />
     <MESSAGE value="и программ.cs тоже поправил" />
@@ -443,7 +444,8 @@
     <MESSAGE value="Написал  логеры для БЛ" />
     <MESSAGE value="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера" />
     <MESSAGE value="Чуть-чуть поправил" />
-    <option name="LAST_COMMIT_MESSAGE" value="Чуть-чуть поправил" />
+    <MESSAGE value="Создал ветвь для ПР" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал ветвь для ПР" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

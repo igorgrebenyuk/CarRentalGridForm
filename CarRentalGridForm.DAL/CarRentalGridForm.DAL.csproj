@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarRental.Storage.EFStorage\CarRental.Storage.EFStorage.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.DAL.Contracts\CarRentalGridForm.DAL.Contracts.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
   </ItemGroup>

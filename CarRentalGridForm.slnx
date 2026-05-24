@@ -1,9 +1,13 @@
 <Solution>
-  <Project Path="CarRentalGridForm.BL.Contracts/CarRentalGridForm.BL.Contracts.csproj" Id="1e2d4463-c961-48cb-9d1f-4849001d974d" />
-  <Project Path="CarRentalGridForm.BL/CarRentalGridForm.BL.csproj" Id="823cc061-1d3e-46b8-a30d-249ed6c5a4db" />
+  <Folder Name="/BL/">
+    <Project Path="CarRentalGridForm.BL.Contracts/CarRentalGridForm.BL.Contracts.csproj" Id="1e2d4463-c961-48cb-9d1f-4849001d974d" />
+    <Project Path="CarRentalGridForm.BL/CarRentalGridForm.BL.csproj" Id="823cc061-1d3e-46b8-a30d-249ed6c5a4db" />
+  </Folder>
+  <Folder Name="/DAL/">
+    <Project Path="CarRentalGridForm.DAL.Contracts/CarRentalGridForm.DAL.Contracts.csproj" Id="ab822b9b-e8a2-4802-84a1-f87dae389413" />
+    <Project Path="CarRentalGridForm.DAL/CarRentalGridForm.DAL.csproj" Id="f68d984b-f277-4718-b52e-db6d18974e83" />
+  </Folder>
   <Project Path="CarRentalGridForm.Constants/CarRentalGridForm.Constants.csproj" Id="47a4d168-4bb9-4c60-bdc7-2c39f13b56ef" />
-  <Project Path="CarRentalGridForm.DAL.Contracts/CarRentalGridForm.DAL.Contracts.csproj" Id="ab822b9b-e8a2-4802-84a1-f87dae389413" />
-  <Project Path="CarRentalGridForm.DAL/CarRentalGridForm.DAL.csproj" Id="f68d984b-f277-4718-b52e-db6d18974e83" />
   <Project Path="CarRentalGridForm.Models/CarRentalGridForm.Models.csproj" Id="b2d925ee-0b61-498a-bf80-f134b6e70452" />
   <Project Path="CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj" Id="9faa9b93-5142-40cd-927f-32730a1d440c" />
   <Project Path="CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" Id="8b805538-78b3-44ab-a532-7fae207bc2a0" />
