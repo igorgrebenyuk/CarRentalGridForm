@@ -15,12 +15,12 @@ namespace CarRentalGridForm.DAL.Contracts
         /// <summary>
         /// Получить автомобиль по ID
         /// </summary>
-        Car GetById(int id);
+        Car? GetById(int id);
 
         /// <summary>
         /// Добавить автомобиль
         /// </summary>
-        void Add(Car car);
+        Car Add(Car car);
 
         /// <summary>
         /// Обновить автомобиль

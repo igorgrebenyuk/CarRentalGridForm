@@ -1,8 +1,9 @@
+using CarRentalGrid.Storage.EFStorage;
 using CarRentalGridForm.BL;
 using CarRentalGridForm.BL.Contracts;
+using CarRentalGridForm.DAL;
 using CarRentalGridForm.DAL.Contracts;
 using CarRentalGridForm.UI;
-using CarRentalGridForm.DAL;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Extensions.Logging;
@@ -32,8 +33,8 @@ namespace CarRentalGridForm
 
             ApplicationConfiguration.Initialize();
 
-            ICarRepository repository = new CarRepository();
-            ICarService service = new CarService(repository);
+            ICarRepository dbrepository = new MySqlCarRepository();
+            ICarService service = new CarService(dbrepository);
 
             ICarService loggingWrapper = new CarServiceLogWrapper(service, logger);
 

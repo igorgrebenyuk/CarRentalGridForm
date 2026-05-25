@@ -2,13 +2,14 @@
 
 namespace CarRentalGridForm.Models
 {
+    
     /// <summary>
     /// Модель автомобиля для системы проката.
     /// </summary>
     public class Car
     {
         /// <summary>
-        /// Уникальный идентификатор автомобиля.
+        /// Индетификатор машины
         /// </summary>
         public int Id { get; set; }
 

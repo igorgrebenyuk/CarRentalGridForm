@@ -11,7 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.slnx" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.slnx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalGrid.Storage.EFStorage.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalGrid.Storage.EFStorage.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/MySqlCarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/MySqlCarRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.DAL.Contracts/ICarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.DAL.Contracts/ICarRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Models/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/Car.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dev__EfCore&amp;&amp;Assync&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#11 on Dev__EfCore&amp;&amp;Assync&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -174,7 +178,10 @@
       <workItem from="1778185275292" duration="116000" />
       <workItem from="1778185905373" duration="549000" />
       <workItem from="1779620630731" duration="136000" />
-      <workItem from="1779621191939" duration="3258000" />
+      <workItem from="1779621191939" duration="3982000" />
+      <workItem from="1779644749856" duration="923000" />
+      <workItem from="1779647510092" duration="112000" />
+      <workItem from="1779657425811" duration="63000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -408,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779623493091</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Создание библиотеки классов для БД">
+      <option name="closed" value="true" />
+      <created>1779625861163</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1779625861163</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +444,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Сменил название формы на более коректное" />
     <MESSAGE value="и программ.cs тоже поправил" />
     <MESSAGE value="некоторые ошибки исправил" />
     <MESSAGE value="Добавил классы" />
@@ -454,7 +468,8 @@
     <MESSAGE value="Чуть-чуть поправил" />
     <MESSAGE value="Создал ветвь для ПР" />
     <MESSAGE value="Коммит для создания ПР" />
-    <option name="LAST_COMMIT_MESSAGE" value="Коммит для создания ПР" />
+    <MESSAGE value="Создание библиотеки классов для БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание библиотеки классов для БД" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

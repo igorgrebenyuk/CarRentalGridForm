@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CarRentalGridForm.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace CarRentalGrid.Storage.EFStorage
+namespace CarRentalGrid.Storage.EFStorage;
+
+public class CarRentalContext : DbContext
 {
-    internal class CarRentalContext
-    {
-    }
+    public DbSet<Car> Cars { get; set; }
+
+    public CarRentalContext() => Database.EnsureCreated();
+
 }

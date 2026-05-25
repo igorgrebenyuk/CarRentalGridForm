@@ -36,10 +36,11 @@ namespace CarRentalGridForm.DAL
         /// Добавляет новый автомобиль в хранилище с присвоением уникального ID.
         /// </summary>
         /// <param name="car">Автомобиль для добавления.</param>
-        public void Add(Car car)
+        public Car Add(Car car)
         {
             car.Id = nextId++;
             cars.Add(car);
+            return car;
         }
 
         /// <summary>
