@@ -12,10 +12,8 @@
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalGrid.Storage.EFStorage.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalGrid.Storage.EFStorage.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/MySqlCarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/MySqlCarRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.DAL.Contracts/ICarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.DAL.Contracts/ICarRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Models/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Models/Car.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.DAL/CarRentalGridForm.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.DAL/CarRentalGridForm.DAL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,28 +51,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.CarRentalGridForm.executor&quot;: &quot;Run&quot;,
-    &quot;8a107f78-20f5-4ab2-bc5f-163adac46e15.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#11 on Dev__EfCore&amp;&amp;Assync&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.CarRentalGridForm.UI.executor": "Run",
+    ".NET Project.CarRentalGridForm.executor": "Run",
+    "8a107f78-20f5-4ab2-bc5f-163adac46e15.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "#11 on Dev__EfCore&&Assync",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver.localdb"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.CarRentalGridForm">
     <configuration name="CarRentalGridForm" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/CarRentalGridForm.UI/bin/Debug/net10.0-windows/CarRentalGridForm.UI.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CarRentalGridForm.UI/bin/Debug/net10.0-windows" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -82,12 +86,12 @@
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="AUTO_ATTACH_CHILDREN" value="0" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CarRentalGridForm/CarRentalGridForm.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="Unloaded" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_KIND" value="StaticMethod" />
+      <option name="PROJECT_TFM" value="net10.0-windows" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -182,6 +186,8 @@
       <workItem from="1779644749856" duration="923000" />
       <workItem from="1779647510092" duration="112000" />
       <workItem from="1779657425811" duration="63000" />
+      <workItem from="1779720361886" duration="293000" />
+      <workItem from="1779721914395" duration="3239000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -423,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779625861163</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Комичу на всякий случай , а так я описал синхронно все методы из ICarRepository.cs">
+      <option name="closed" value="true" />
+      <created>1779720550126</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1779720550126</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +458,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="и программ.cs тоже поправил" />
     <MESSAGE value="некоторые ошибки исправил" />
     <MESSAGE value="Добавил классы" />
     <MESSAGE value="Перенёс все файлы в свои классы" />
@@ -469,7 +482,8 @@
     <MESSAGE value="Создал ветвь для ПР" />
     <MESSAGE value="Коммит для создания ПР" />
     <MESSAGE value="Создание библиотеки классов для БД" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание библиотеки классов для БД" />
+    <MESSAGE value="Комичу на всякий случай , а так я описал синхронно все методы из ICarRepository.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Комичу на всякий случай , а так я описал синхронно все методы из ICarRepository.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
