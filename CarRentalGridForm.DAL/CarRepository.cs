@@ -36,11 +36,11 @@ namespace CarRentalGridForm.DAL
         /// Добавляет новый автомобиль в хранилище с присвоением уникального ID.
         /// </summary>
         /// <param name="car">Автомобиль для добавления.</param>
-        public Car Add(Car car)
+        public Task<Car> AddAsync(Car car)
         {
             car.Id = nextId++;
             cars.Add(car);
-            return car;
+            return Task.FromResult(car);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace CarRentalGridForm.DAL
 
         private void SeedInitialData()
         {
-            Add(new Car
+            AddAsync(new Car
             {
                 Brand = "Hyundai",
                 LicensePlate = "А123БВ78",
@@ -74,7 +74,7 @@ namespace CarRentalGridForm.DAL
                 RentCostPerMinute = 5.5m
             });
 
-            Add(new Car
+            AddAsync(new Car
             {
                 Brand = "Lada",
                 LicensePlate = "В456ГД78",
@@ -84,7 +84,7 @@ namespace CarRentalGridForm.DAL
                 RentCostPerMinute = 3.0m
             });
 
-            Add(new Car
+            AddAsync(new Car
             {
                 Brand = "Mitsubishi",
                 LicensePlate = "Е789ЖЗ78",

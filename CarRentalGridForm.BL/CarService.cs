@@ -38,10 +38,10 @@ namespace CarRentalGridForm.BL
         /// Добавляет новый автомобиль после проверки валидности данных.
         /// </summary>
         /// <param name="car">Автомобиль для добавления.</param>
-        public void AddCar(Car car)
+        public async Task AddCarAsync(Car car)
         {
             ValidateCar(car);
-            repository.Add(car);
+            await repository.AddAsync(car);
         }
 
         /// <summary>

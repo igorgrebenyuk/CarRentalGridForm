@@ -20,7 +20,7 @@ namespace CarRentalGridForm.DAL.Contracts
         /// <summary>
         /// Добавить автомобиль
         /// </summary>
-        Car Add(Car car);
+        Task<Car> AddAsync(Car car);
 
         /// <summary>
         /// Обновить автомобиль

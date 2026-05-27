@@ -105,7 +105,7 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод Add добавляет автомобиль с уникальным ID
         /// </summary>
         [Fact]
-        public void Add_ValidCar_AssignsUniqueIdAndAddsToCollection()
+        public async Task Add_ValidCar_AssignsUniqueIdAndAddsToCollection()
         {
             // Arrange уже выполнен в конструкторе
             var initialCount = repository.GetAll().Count;
@@ -120,7 +120,7 @@ namespace CarRentalGridForm.Tests.DAL
             };
 
             // Act
-            repository.Add(newCar);
+            await repository.AddAsync(newCar);
 
             // Assert
             repository.GetAll().Should().HaveCount(initialCount + 1);
@@ -132,15 +132,15 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод Add присваивает возрастающие ID при добавлении нескольких автомобилей
         /// </summary>
         [Fact]
-        public void Add_MultipleCars_IncrementsId()
+        public async Task Add_MultipleCars_IncrementsId()
         {
             // Arrange уже выполнен в конструкторе
             var car1 = new Car { Brand = "A", LicensePlate = "А1", Mileage = 0, AverageConsumption = 8.0, CurrentFuel = 50, RentCostPerMinute = 5m };
             var car2 = new Car { Brand = "Б", LicensePlate = "Б2", Mileage = 0, AverageConsumption = 8.0, CurrentFuel = 50, RentCostPerMinute = 5m };
 
             // Act
-            repository.Add(car1);
-            repository.Add(car2);
+            await repository.AddAsync(car1);
+            await repository.AddAsync(car2);
 
             // Assert
             car2.Id.Should().Be(car1.Id + 1);

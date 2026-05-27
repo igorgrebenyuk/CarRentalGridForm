@@ -86,7 +86,7 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод AddCar выбрасывает исключение при пустой марке автомобиля
         /// </summary>
         [Fact]
-        public void AddCar_EmptyBrand_ThrowsArgumentException()
+        public async Task AddCar_EmptyBrand_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -100,18 +100,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage("Марка автомобиля не может быть пустой");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage("Марка автомобиля не может быть пустой");
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar выбрасывает исключение при пустом гос. номере
         /// </summary>
         [Fact]
-        public void AddCar_EmptyLicensePlate_ThrowsArgumentException()
+        public async Task AddCar_EmptyLicensePlate_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -125,18 +125,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage("Гос. номер не может быть пустым");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage("Гос. номер не может быть пустым");
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar выбрасывает исключение при отрицательном пробеге
         /// </summary>
         [Fact]
-        public void AddCar_NegativeMileage_ThrowsArgumentException()
+        public async Task AddCar_NegativeMileage_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -150,18 +150,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage("Пробег не может быть отрицательным");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage("Пробег не может быть отрицательным");
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar выбрасывает исключение при расходе топлива равном минимальному лимиту
         /// </summary>
         [Fact]
-        public void AddCar_ConsumptionAtMinLimit_ThrowsArgumentException()
+        public async Task AddCar_ConsumptionAtMinLimit_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -175,18 +175,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage($"Расход топлива должен быть больше {CarLimits.MinConsumption} литра");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage($"Расход топлива должен быть больше {CarLimits.MinConsumption} литра");
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar выбрасывает исключение при расходе топлива равном максимальному лимиту
         /// </summary>
         [Fact]
-        public void AddCar_ConsumptionAtMaxLimit_ThrowsArgumentException()
+        public async Task AddCar_ConsumptionAtMaxLimit_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -200,18 +200,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage($"Расход топлива должен быть меньше {CarLimits.MaxConsumption} литров");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage($"Расход топлива должен быть меньше {CarLimits.MaxConsumption} литров");
+            mockRepository.Verify(r => r.AddAsync   (It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar выбрасывает исключение при уровне топлива вне допустимого диапазона
         /// </summary>
         [Fact]
-        public void AddCar_FuelOutOfRange_ThrowsArgumentException()
+        public async Task AddCar_FuelOutOfRange_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -225,18 +225,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage("Топливо должно быть в диапазоне 0-100 литров");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage("Топливо должно быть в диапазоне 0-100 литров");
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar выбрасывает исключение при стоимости аренды равной минимальному лимиту
         /// </summary>
         [Fact]
-        public void AddCar_RentCostAtMinLimit_ThrowsArgumentException()
+        public async Task AddCar_RentCostAtMinLimit_ThrowsArgumentException()
         {
             // Arrange
             var invalidCar = new Car
@@ -250,18 +250,18 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            Action act = () => service.AddCar(invalidCar);
+            Func<Task> act = async () => await service.AddCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>().WithMessage("Стоимость аренды должна быть больше нуля");
-            mockRepository.Verify(r => r.Add(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>().WithMessage("Стоимость аренды должна быть больше нуля");
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
         /// Тест проверяет что метод AddCar добавляет валидный автомобиль в репозиторий
         /// </summary>
         [Fact]
-        public void AddCar_ValidCar_AddsToRepository()
+        public async Task AddCar_ValidCar_AddsToRepository()
         {
             // Arrange
             var validCar = new Car
@@ -275,10 +275,10 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            service.AddCar(validCar);
+            await service.AddCarAsync(validCar);
 
             // Assert
-            mockRepository.Verify(r => r.Add(validCar), Times.Once);
+            mockRepository.Verify(r => r.AddAsync(validCar), Times.Once);
         }
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace CarRentalGridForm.BL.Contracts
         /// Добавляет новый автомобиль после проверки валидности.
         /// </summary>
         /// <param name="car">Автомобиль для добавления.</param>
-        void AddCar(Car car);
+        Task AddCarAsync(Car car);
 
         /// <summary>
         /// Обновляет данные существующего автомобиля.

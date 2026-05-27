@@ -59,12 +59,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Добавляет машину с логированием производительности
         /// </summary>
-        public void AddCar(Car car)
+        public async Task AddCarAsync(Car car)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            carService.AddCar(car);
+             await carService.AddCarAsync(car);
 
             watch.Stop();
             var brand = car != null ? car.Brand : null;

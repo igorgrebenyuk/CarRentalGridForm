@@ -25,11 +25,11 @@ public class MySqlCarRepository : ICarRepository
         return item;
     }
 
-    Car ICarRepository.Add(Car car)
+    async Task<Car> ICarRepository.AddAsync(Car car)
     {
         using var db = new CarRentalContext();
         db.Cars.Add(car);
-        db.SaveChanges();
+        await db.SaveChangesAsync();
         return car;
     }
 

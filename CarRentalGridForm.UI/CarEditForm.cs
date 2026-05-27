@@ -218,7 +218,7 @@ namespace CarRentalGridForm.UI
             numPrice.Maximum = CarLimits.MaxRentCost;
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private async void btnOk_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
 
@@ -270,7 +270,7 @@ namespace CarRentalGridForm.UI
             try
             {
                 if (isNewCar)
-                    carService.AddCar(currentCar);
+                    await carService.AddCarAsync(currentCar);
                 else
                     carService.UpdateCar(currentCar);
 
