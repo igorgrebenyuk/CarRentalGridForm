@@ -25,7 +25,7 @@ namespace CarRentalGridForm.DAL.Contracts
         /// <summary>
         /// Обновить автомобиль
         /// </summary>
-        void Update(Car car);
+        Task UpdateAsync(Car car);
 
         /// <summary>
         /// Удалить автомобиль по ID

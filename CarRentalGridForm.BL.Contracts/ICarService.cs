@@ -30,7 +30,7 @@ namespace CarRentalGridForm.BL.Contracts
         /// Обновляет данные существующего автомобиля.
         /// </summary>
         /// <param name="car">Автомобиль с обновлёнными данными.</param>
-        void UpdateCar(Car car);
+        Task UpdateCarAsync(Car car);
 
         /// <summary>
         /// Удаляет автомобиль по уникальному идентификатору.

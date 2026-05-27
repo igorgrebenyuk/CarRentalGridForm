@@ -33,24 +33,24 @@ public class MySqlCarRepository : ICarRepository
         return car;
     }
 
-    void ICarRepository.Update(Car car)
+    async Task ICarRepository.UpdateAsync(Car car)
     {
         using var db = new CarRentalContext();
-        var item = db.Cars
-            .FirstOrDefault(x => x.Id == car.Id);
+        var item = await db.Cars
+            .FirstOrDefaultAsync(x => x.Id == car.Id);
         if (item != null)
         {
-            
-        item.Brand = car.Brand;
-        item.LicensePlate = car.LicensePlate;
-        item.Mileage = car.Mileage;
-        item.AverageConsumption = car.AverageConsumption;
-        item.CurrentFuel = car.CurrentFuel;
-        item.RentCostPerMinute = car.RentCostPerMinute;
+
+            item.Brand = car.Brand;
+            item.LicensePlate = car.LicensePlate;
+            item.Mileage = car.Mileage;
+            item.AverageConsumption = car.AverageConsumption;
+            item.CurrentFuel = car.CurrentFuel;
+            item.RentCostPerMinute = car.RentCostPerMinute;
 
 
-        db.Update(item);
-        db.SaveChanges();
+            db.Update(item);
+            await db.SaveChangesAsync();
         }
     }
 
@@ -59,10 +59,10 @@ public class MySqlCarRepository : ICarRepository
         using var db = new CarRentalContext();
         var item = db.Cars
             .FirstOrDefault(x => x.Id == id);
-       if (item != null)
-    {
-        db.Cars.Remove(item);
-        db.SaveChanges();
-    }
+        if (item != null)
+        {
+            db.Cars.Remove(item);
+            db.SaveChanges();
+        }
     }
 }

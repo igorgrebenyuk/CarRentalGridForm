@@ -272,7 +272,7 @@ namespace CarRentalGridForm.UI
                 if (isNewCar)
                     await carService.AddCarAsync(currentCar);
                 else
-                    carService.UpdateCar(currentCar);
+                    await carService.UpdateCarAsync(currentCar);
 
                 DialogResult = DialogResult.OK;
                 Close();

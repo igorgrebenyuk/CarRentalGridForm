@@ -27,6 +27,17 @@
     &quot;assignee&quot;: &quot;igorgrebenyuk&quot;
   }
 }</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOR3StFM7exhSv&quot;,
+        &quot;number&quot;: 11
+      },
+      &quot;lastSeen&quot;: 1779880005720
+    }
+  ]
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/igorgrebenyuk/CarRentalGridForm&quot;,
@@ -183,6 +194,7 @@
       <workItem from="1779657425811" duration="63000" />
       <workItem from="1779720361886" duration="293000" />
       <workItem from="1779721914395" duration="3475000" />
+      <workItem from="1779879983236" duration="149000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -440,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779726653516</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Сделал Метод Add асинхронным">
+      <option name="closed" value="true" />
+      <created>1779880048521</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1779880048524</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +481,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Добавил классы" />
     <MESSAGE value="Перенёс все файлы в свои классы" />
     <MESSAGE value="Всё настроил" />
     <MESSAGE value="Проверил все файлы , всё должно быть верно" />
@@ -486,7 +505,8 @@
     <MESSAGE value="Создание библиотеки классов для БД" />
     <MESSAGE value="Комичу на всякий случай , а так я описал синхронно все методы из ICarRepository.cs" />
     <MESSAGE value="Сделал так чтобы БД работала синхронно" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал так чтобы БД работала синхронно" />
+    <MESSAGE value="Сделал Метод Add асинхронным" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал Метод Add асинхронным" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -79,12 +79,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Обновляет автомобиль с логированием производительности
         /// </summary>
-        public void UpdateCar(Car car)
+        public async Task UpdateCarAsync(Car car)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            carService.UpdateCar(car);
+            await carService.UpdateCarAsync(car);
 
             watch.Stop();
             var brand = car != null ? car.Brand : null;

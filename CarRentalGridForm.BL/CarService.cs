@@ -48,10 +48,10 @@ namespace CarRentalGridForm.BL
         /// Обновляет данные существующего автомобиля после проверки валидности.
         /// </summary>
         /// <param name="car">Автомобиль с обновлёнными данными.</param>
-        public void UpdateCar(Car car)
+        public async Task UpdateCarAsync(Car car)
         {
             ValidateCar(car);
-            repository.Update(car);
+            await repository.UpdateAsync(car);
         }
 
         /// <summary>

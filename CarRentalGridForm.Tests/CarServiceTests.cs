@@ -285,7 +285,7 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод UpdateCar обновляет валидный автомобиль через репозиторий
         /// </summary>
         [Fact]
-        public void UpdateCar_ValidCar_UpdatesThroughRepository()
+        public async Task UpdateCar_ValidCar_UpdatesThroughRepository()
         {
             // Arrange
             var validCar = new Car
@@ -300,27 +300,27 @@ namespace CarRentalGridForm.Tests.BL
             };
 
             // Act
-            service.UpdateCar(validCar);
+            await service.UpdateCarAsync(validCar);
 
             // Assert
-            mockRepository.Verify(r => r.Update(validCar), Times.Once);
+            mockRepository.Verify(r => r.UpdateAsync(validCar), Times.Once);
         }
 
         /// <summary>
         /// Тест проверяет что метод UpdateCar не вызывает репозиторий при невалидных данных
         /// </summary>
         [Fact]
-        public void UpdateCar_InvalidData_DoesNotCallRepository()
+        public async Task UpdateCar_InvalidData_DoesNotCallRepository()
         {
             // Arrange
             var invalidCar = new Car { Brand = "  ", LicensePlate = "А123БВ78" };
 
             // Act
-            Action act = () => service.UpdateCar(invalidCar);
+            Func<Task> act = async () => await service.UpdateCarAsync(invalidCar);
 
             // Assert
-            act.Should().Throw<ArgumentException>();
-            mockRepository.Verify(r => r.Update(It.IsAny<Car>()), Times.Never);
+            await act.Should().ThrowAsync<ArgumentException>();
+            mockRepository.Verify(r => r.UpdateAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>

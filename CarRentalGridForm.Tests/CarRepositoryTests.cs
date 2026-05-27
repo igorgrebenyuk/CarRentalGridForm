@@ -150,7 +150,7 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод Update заменяет существующий автомобиль новыми данными
         /// </summary>
         [Fact]
-        public void Update_ExistingCar_ReplacesData()
+        public async Task Update_ExistingCar_ReplacesData()
         {
             // Arrange уже выполнен в конструкторе
             var originalId = repository.GetAll().First().Id;
@@ -168,7 +168,7 @@ namespace CarRentalGridForm.Tests.DAL
             };
 
             // Act
-            repository.Update(updatedCar);
+            await repository.UpdateAsync(updatedCar);
 
             // Assert
             var carInStorage = repository.GetAll().First(c => c.Id == originalId);
@@ -179,7 +179,7 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод Update не изменяет коллекцию при обновлении несуществующего автомобиля
         /// </summary>
         [Fact]
-        public void Update_NonExistingCar_DoesNotChangeCollection()
+        public async Task Update_NonExistingCar_DoesNotChangeCollection()
         {
             // Arrange уже выполнен в конструкторе
             var originalCount = repository.GetAll().Count;
@@ -195,7 +195,7 @@ namespace CarRentalGridForm.Tests.DAL
             };
 
             // Act
-            repository.Update(fakeTestCar);
+            await repository.UpdateAsync(fakeTestCar);
 
             // Assert
             repository.GetAll().Should().HaveCount(originalCount);

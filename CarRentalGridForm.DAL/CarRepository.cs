@@ -47,7 +47,7 @@ namespace CarRentalGridForm.DAL
         /// Обновляет данные существующего автомобиля в хранилище.
         /// </summary>
         /// <param name="car">Автомобиль с обновлёнными данными.</param>
-        public void Update(Car car)
+        public async Task UpdateAsync(Car car)
         {
             var index = cars.FindIndex(c => c.Id == car.Id);
             if (index >= 0)
