@@ -6,13 +6,13 @@ namespace CarRentalGrid.Storage.EFStorage;
 
 public class MySqlCarRepository : ICarRepository
 {
-    List<Car> ICarRepository.GetAll()
+    public async Task<List<Car>> GetAllCarsAsync()
     {
-        using var db = new CarRentalContext();
-        var items = db.Cars
+        using var db =  new CarRentalContext();
+        var items = await db.Cars
         .AsNoTracking()
         .OrderBy(x => x.Brand)
-        .ToList();
+        .ToListAsync();
         return items;
     }
 

@@ -11,7 +11,7 @@ namespace CarRentalGridForm.BL.Contracts
         /// Возвращает список всех автомобилей.
         /// </summary>
         /// <returns>Список всех автомобилей.</returns>
-        List<Car> GetAllCars();
+        Task<List<Car>> GetAllCarsAsync();
 
         /// <summary>
         /// Возвращает автомобиль по уникальному идентификатору.
@@ -42,6 +42,6 @@ namespace CarRentalGridForm.BL.Contracts
         /// Формирует сводную статистику по парку автомобилей.
         /// </summary>
         /// <returns>Объект статистики с основными показателями.</returns>
-        Statistics GetStatistics();
+        Task<Statistics> GetStatisticsAsync();
     }
 }

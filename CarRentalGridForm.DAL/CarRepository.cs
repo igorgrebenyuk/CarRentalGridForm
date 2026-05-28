@@ -23,7 +23,9 @@ namespace CarRentalGridForm.DAL
         /// Возвращает список всех автомобилей из хранилища.
         /// </summary>
         /// <returns>Список всех автомобилей.</returns>
-        public List<Car> GetAll() => new(cars);
+        public Task<List<Car>> GetAllCarsAsync() =>
+        Task.FromResult(new List<Car>(cars));
+
 
         /// <summary>
         /// Возвращает автомобиль по уникальному идентификатору.

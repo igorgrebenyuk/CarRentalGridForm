@@ -24,12 +24,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Возвращает все машины    с логированием производительности
         /// </summary>
-        public List<Car> GetAllCars()
+        public async Task<List<Car>> GetAllCarsAsync()
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = carService.GetAllCars();
+            var result = await carService.GetAllCarsAsync();
 
             watch.Stop();
             var count = result != null ? result.Count : 0;
@@ -117,12 +117,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Возвращает статистику с логированием производительности
         /// </summary>
-        public Statistics GetStatistics()
+        public async Task<Statistics> GetStatisticsAsync()
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = carService.GetStatistics();
+            var result = await carService.GetStatisticsAsync();
 
             watch.Stop();
             var totalCars = result != null ? result.TotalCars : 0;

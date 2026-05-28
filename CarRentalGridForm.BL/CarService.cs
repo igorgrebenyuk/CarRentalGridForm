@@ -25,7 +25,7 @@ namespace CarRentalGridForm.BL
         /// Возвращает список всех автомобилей из репозитория.
         /// </summary>
         /// <returns>Список всех автомобилей.</returns>
-        public List<Car> GetAllCars() => repository.GetAll();
+        public async Task<List<Car>> GetAllCarsAsync() => await repository.GetAllCarsAsync();
 
         /// <summary>
         /// Возвращает автомобиль по уникальному идентификатору.
@@ -64,9 +64,9 @@ namespace CarRentalGridForm.BL
         /// Формирует и возвращает статистику по парку автомобилей.
         /// </summary>
         /// <returns>Объект статистики с основными показателями.</returns>
-        public Statistics GetStatistics()
+        public async Task<Statistics> GetStatisticsAsync()
         {
-            var cars = repository.GetAll();
+            var cars = await repository.GetAllCarsAsync();
 
             return new Statistics
             {

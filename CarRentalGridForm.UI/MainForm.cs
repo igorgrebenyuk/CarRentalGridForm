@@ -34,9 +34,9 @@ namespace CarRentalGridForm.UI
             dgvCars.CellPainting += dgvCars_CellPainting;
         }
 
-        private void LoadData()
+        private async void LoadData()
         {
-            var cars = carService.GetAllCars();
+            var cars = await carService.GetAllCarsAsync();
             bindingSource.DataSource = cars;
 
             maxRentSum = cars.Any() ? cars.Max(c => c.TotalRentSum) : 1;
@@ -132,9 +132,9 @@ namespace CarRentalGridForm.UI
             }
         }
 
-        private void UpdateStatusInfo()
+        private async void UpdateStatusInfo()
         {
-            var stats = carService.GetStatistics();
+            var stats = await carService.GetStatisticsAsync();
             lblStatusInfo.Text =
                 $"Всего машин: {stats.TotalCars} | Критическое топливо: {stats.LowFuelCars}";
         }

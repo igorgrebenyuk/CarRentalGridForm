@@ -24,12 +24,12 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что конструктор создаёт три автомобиля с начальными данными
         /// </summary>
         [Fact]
-        public void Constructor_CreatesThreeCarsWithInitialData()
+        public async Task Constructor_CreatesThreeCarsWithInitialData()
         {
             // Arrange и Act уже выполнены в конструкторе
 
             // Assert
-            var cars = repository.GetAll();
+            var cars = await repository.GetAllCarsAsync();
             cars.Should().HaveCount(3);
             cars.Should().Contain(c => c.Brand == "Hyundai" && c.LicensePlate == "А123БВ78");
             cars.Should().Contain(c => c.Brand == "Lada" && c.LicensePlate == "В456ГД78");
@@ -40,13 +40,13 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод GetAll возвращает копию коллекции (не ту же ссылку)
         /// </summary>
         [Fact]
-        public void GetAll_ReturnsCopyNotReference()
+        public async Task GetAll_ReturnsCopyNotReference()
         {
             // Arrange уже выполнен в конструкторе
-            var firstCall = repository.GetAll();
+            var firstCall = await repository.GetAllCarsAsync();
 
             // Act
-            var secondCall = repository.GetAll();
+            var secondCall =  await repository.GetAllCarsAsync();
 
             // Assert
             secondCall.Should().NotBeSameAs(firstCall);
@@ -57,12 +57,12 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод GetAll возвращает все добавленные автомобили
         /// </summary>
         [Fact]
-        public void GetAll_ReturnsAllCars()
+        public async Task GetAll_ReturnsAllCars()
         {
             // Arrange уже выполнен в конструкторе
 
             // Act
-            var cars = repository.GetAll();
+            var cars = await repository.GetAllCarsAsync();
 
             // Assert
             cars.Should().HaveCount(3);
@@ -76,7 +76,7 @@ namespace CarRentalGridForm.Tests.DAL
         public async Task GetById_ExistingId_ReturnsCar()
         {
             // Arrange уже выполнен в конструкторе
-            var expectedId = repository.GetAll().First().Id;
+            var expectedId = (await repository.GetAllCarsAsync()).First().Id;
 
             // Act
             var result = await repository.GetByIdAsync(expectedId);
@@ -108,7 +108,7 @@ namespace CarRentalGridForm.Tests.DAL
         public async Task Add_ValidCar_AssignsUniqueIdAndAddsToCollection()
         {
             // Arrange уже выполнен в конструкторе
-            var initialCount = repository.GetAll().Count;
+            var initialCount = (await repository.GetAllCarsAsync()).Count;
             var newCar = new Car
             {
                 Brand = "Kia",
@@ -123,9 +123,9 @@ namespace CarRentalGridForm.Tests.DAL
             await repository.AddAsync(newCar);
 
             // Assert
-            repository.GetAll().Should().HaveCount(initialCount + 1);
+            ( (await repository.GetAllCarsAsync()).Should()).HaveCount(initialCount + 1);
             newCar.Id.Should().BeGreaterThan(0);
-            repository.GetAll().Should().Contain(c => c.Id == newCar.Id);
+            (await repository.GetAllCarsAsync()).Should().Contain(c => c.Id == newCar.Id);
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace CarRentalGridForm.Tests.DAL
         public async Task Update_ExistingCar_ReplacesData()
         {
             // Arrange уже выполнен в конструкторе
-            var originalId = repository.GetAll().First().Id;
+            var originalId = (await repository.GetAllCarsAsync()).First().Id;
             var updatedBrand = "Updated_" + Guid.NewGuid().ToString("N").Substring(0, 6);
 
             var updatedCar = new Car
@@ -171,7 +171,7 @@ namespace CarRentalGridForm.Tests.DAL
             await repository.UpdateAsync(updatedCar);
 
             // Assert
-            var carInStorage = repository.GetAll().First(c => c.Id == originalId);
+            var carInStorage = (await repository.GetAllCarsAsync()).First(c => c.Id == originalId);
             carInStorage.Brand.Should().Be(updatedBrand);
         }
 
@@ -182,7 +182,7 @@ namespace CarRentalGridForm.Tests.DAL
         public async Task Update_NonExistingCar_DoesNotChangeCollection()
         {
             // Arrange уже выполнен в конструкторе
-            var originalCount = repository.GetAll().Count;
+            var originalCount = (await repository.GetAllCarsAsync()).Count;
             var fakeTestCar = new Car
             {
                 Id = 9999,
@@ -198,8 +198,8 @@ namespace CarRentalGridForm.Tests.DAL
             await repository.UpdateAsync(fakeTestCar);
 
             // Assert
-            repository.GetAll().Should().HaveCount(originalCount);
-            repository.GetAll().Should().NotContain(c => c.Id == 9999);
+            (await repository.GetAllCarsAsync()).Should().HaveCount(originalCount);
+            (await repository.GetAllCarsAsync()).Should().NotContain(c => c.Id == 9999);
         }
 
         /// <summary>
@@ -209,15 +209,15 @@ namespace CarRentalGridForm.Tests.DAL
         public async Task Delete_ExistingCar_RemovesFromCollection()
         {
             // Arrange уже выполнен в конструкторе
-            var carToDelete = repository.GetAll().First();
+            var carToDelete = (await repository.GetAllCarsAsync()).First();
             var carId = carToDelete.Id;
 
             // Act
             await repository.DeleteAsync(carId);
 
             // Assert
-            repository.GetAll().Should().HaveCount(2);
-            repository.GetAll().Should().NotContain(c => c.Id == carId);
+            (await repository.GetAllCarsAsync()).Should().HaveCount(2);
+            (await repository.GetAllCarsAsync()).Should().NotContain(c => c.Id == carId);
         }
 
         /// <summary>
@@ -227,13 +227,13 @@ namespace CarRentalGridForm.Tests.DAL
         public async Task Delete_NonExistingCar_DoesNotChangeCollection()
         {
             // Arrange уже выполнен в конструкторе
-            var originalCount = repository.GetAll().Count;
+            var originalCount = (await repository.GetAllCarsAsync()).Count;
 
             // Act
             await repository.DeleteAsync(9999);
 
             // Assert
-            repository.GetAll().Should().HaveCount(originalCount);
+            (await repository.GetAllCarsAsync()).Should().HaveCount(originalCount);
         }
     }
 }

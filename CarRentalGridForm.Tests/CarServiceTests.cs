@@ -29,7 +29,7 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод GetAllCars возвращает список автомобилей из репозитория
         /// </summary>
         [Fact]
-        public void GetAllCars_ReturnsListOfCarsFromRepository()
+        public async Task GetAllCars_ReturnsListOfCarsFromRepository()
         {
             // Arrange
             var expectedCars = new List<Car>
@@ -37,14 +37,14 @@ namespace CarRentalGridForm.Tests.BL
                 new Car { Id = 1, Brand = "Toyota", LicensePlate = "А111АА77", Mileage = 1000, AverageConsumption = 8.0, CurrentFuel = 50.0, RentCostPerMinute = 5.0m },
                 new Car { Id = 2, Brand = "Honda", LicensePlate = "В222ВВ77", Mileage = 2000, AverageConsumption = 7.5, CurrentFuel = 40.0, RentCostPerMinute = 4.5m }
             };
-            mockRepository.Setup(r => r.GetAll()).Returns(expectedCars);
+            mockRepository.Setup(r => r.GetAllCarsAsync()).ReturnsAsync(expectedCars);
 
             // Act
-            var result = service.GetAllCars();
+            var result = await service.GetAllCarsAsync();
 
             // Assert
             result.Should().BeEquivalentTo(expectedCars);
-            mockRepository.Verify(r => r.GetAll(), Times.Once);
+            mockRepository.Verify(r => r.GetAllCarsAsync(), Times.Once);
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод GetStatistics корректно рассчитывает статистику по парку автомобилей
         /// </summary>
         [Fact]
-        public void GetStatistics_WithCars_ReturnsCorrectStats()
+        public async Task GetStatistics_WithCars_ReturnsCorrectStats()
         {
             var cars = new List<Car>
             {
@@ -352,10 +352,10 @@ namespace CarRentalGridForm.Tests.BL
                 new Car { CurrentFuel = 6.9, AverageConsumption = 10.0, RentCostPerMinute = 10m },
                 new Car { CurrentFuel = 0.0, AverageConsumption = 10.0, RentCostPerMinute = 10m }
             };
-            mockRepository.Setup(r => r.GetAll()).Returns(cars);
+            mockRepository.Setup(r => r.GetAllCarsAsync()).ReturnsAsync(cars);
 
             // Act
-            var stats = service.GetStatistics();
+            var stats = await service.GetStatisticsAsync();
 
             // Assert
             stats.TotalCars.Should().Be(4);
@@ -367,13 +367,13 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод GetStatistics возвращает нулевые значения при пустом списке автомобилей
         /// </summary>
         [Fact]
-        public void GetStatistics_NoCars_ReturnsZeroStats()
+        public async Task GetStatistics_NoCars_ReturnsZeroStats()
         {
             // Arrange
-            mockRepository.Setup(r => r.GetAll()).Returns(new List<Car>());
+            mockRepository.Setup(r => r.GetAllCarsAsync()).ReturnsAsync(new List<Car>());
 
             // Act
-            var stats = service.GetStatistics();
+            var stats = await service.GetStatisticsAsync();
 
             // Assert
             stats.TotalCars.Should().Be(0);
