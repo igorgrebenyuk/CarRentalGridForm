@@ -4,8 +4,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarRentalGrid.Storage.EFStorage;
 
+/// <summary>
+/// Репозиторий для работы с сущностью <see cref="Car"/> через Entity Framework Core и MS SQL Server.
+/// Реализует интерфейс <see cref="ICarRepository"/>.
+/// </summary>
 public class MySqlCarRepository : ICarRepository
 {
+    /// <summary>
+    /// Асинхронно получает все автомобили из базы данных, отсортированные по марке.
+    /// Использует <see cref="AsNoTracking"/> для оптимизации чтения.
+    /// </summary>
     public async Task<List<Car>> GetAllCarsAsync()
     {
         using var db =  new CarRentalContext();
@@ -16,6 +24,10 @@ public class MySqlCarRepository : ICarRepository
         return items;
     }
 
+    /// <summary>
+    /// Асинхронно находит автомобиль по уникальному идентификатору.
+    /// Возвращает <c>null</c>, если запись не найдена.
+    /// </summary>
     async Task<Car?> ICarRepository.GetByIdAsync(int id)
     {
         using var db = new CarRentalContext();
@@ -25,6 +37,9 @@ public class MySqlCarRepository : ICarRepository
         return item;
     }
 
+    /// <summary>
+    /// Асинхронно добавляет новый автомобиль в базу данных и сохраняет изменения.
+    /// </summary>
     async Task<Car> ICarRepository.AddAsync(Car car)
     {
         using var db = new CarRentalContext();
@@ -33,6 +48,10 @@ public class MySqlCarRepository : ICarRepository
         return car;
     }
 
+    /// <summary>
+    /// Асинхронно обновляет существующий автомобиль по идентификатору.
+    /// Если запись найдена, обновляет все поля и сохраняет изменения.
+    /// </summary>
     async Task ICarRepository.UpdateAsync(Car car)
     {
         using var db = new CarRentalContext();
@@ -54,6 +73,10 @@ public class MySqlCarRepository : ICarRepository
         }
     }
 
+    /// <summary>
+    /// Асинхронно удаляет автомобиль по идентификатору.
+    /// Если запись найдена, удаляет её и сохраняет изменения.
+    /// </summary>
     async Task ICarRepository.DeleteAsync(int id)
     {
         using var db = new CarRentalContext();
