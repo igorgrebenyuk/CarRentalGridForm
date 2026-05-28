@@ -18,7 +18,7 @@ namespace CarRentalGridForm.BL.Contracts
         /// </summary>
         /// <param name="id">Идентификатор автомобиля.</param>
         /// <returns>Автомобиль с указанным ID.</returns>
-        Car GetCarById(int id);
+        Task <Car?> GetCarByIdAsync(int id);
 
         /// <summary>
         /// Добавляет новый автомобиль после проверки валидности.

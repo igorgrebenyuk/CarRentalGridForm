@@ -15,7 +15,7 @@ namespace CarRentalGridForm.DAL.Contracts
         /// <summary>
         /// Получить автомобиль по ID
         /// </summary>
-        Car? GetById(int id);
+        Task <Car?> GetByIdAsync(int id);
 
         /// <summary>
         /// Добавить автомобиль

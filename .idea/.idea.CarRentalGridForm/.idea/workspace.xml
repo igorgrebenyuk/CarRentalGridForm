@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,6 +198,7 @@
       <workItem from="1779882508996" duration="140000" />
       <workItem from="1779882699468" duration="135000" />
       <workItem from="1779975432129" duration="348000" />
+      <workItem from="1779979810989" duration="156000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -473,7 +472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779882621319</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Сделал Метод delete ассинхронным">
+      <option name="closed" value="true" />
+      <created>1779979861413</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1779979861413</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Всё настроил" />
     <MESSAGE value="Проверил все файлы , всё должно быть верно" />
     <MESSAGE value="Сделал private static void" />
     <MESSAGE value="убрал ненужную константу и добавил новые , чтобы избавиться от магических чисел" />
@@ -519,7 +525,8 @@
     <MESSAGE value="Сделал так чтобы БД работала синхронно" />
     <MESSAGE value="Сделал Метод Add асинхронным" />
     <MESSAGE value="Сделал Update асинхронным" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал Update асинхронным" />
+    <MESSAGE value="Сделал Метод delete ассинхронным" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал Метод delete ассинхронным" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

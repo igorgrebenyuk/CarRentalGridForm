@@ -51,35 +51,35 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод GetCarById возвращает автомобиль при наличии
         /// </summary>
         [Fact]
-        public void GetCarById_ExistingId_ReturnsCar()
+        public async Task GetCarById_ExistingId_ReturnsCar()
         {
             // Arrange
             var expectedCar = new Car { Id = 42, Brand = "BMW", LicensePlate = "Е333ЕЕ77", Mileage = 5000, AverageConsumption = 9.0, CurrentFuel = 60.0, RentCostPerMinute = 6.0m };
-            mockRepository.Setup(r => r.GetById(42)).Returns(expectedCar);
+            mockRepository.Setup(r => r.GetByIdAsync(42)).ReturnsAsync(expectedCar);
 
             // Act
-            var result = service.GetCarById(42);
+            var result = await service.GetCarByIdAsync(42);
 
             // Assert
             result.Should().BeEquivalentTo(expectedCar);
-            mockRepository.Verify(r => r.GetById(42), Times.Once);
+            mockRepository.Verify(r => r.GetByIdAsync(42), Times.Once);
         }
 
         /// <summary>
         /// Тест проверяет что метод GetCarById возвращает null при отсутствии автомобиля
         /// </summary>
         [Fact]
-        public void GetCarById_NonExistingId_ReturnsNull()
+        public async Task GetCarById_NonExistingId_ReturnsNull()
         {
             // Arrange
-            mockRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns((Car)null);
+            mockRepository.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((Car?)null);
 
             // Act
-            var result = service.GetCarById(999);
+            var result = await service.GetCarByIdAsync(999);
 
             // Assert
             result.Should().BeNull();
-            mockRepository.Verify(r => r.GetById(999), Times.Once);
+            mockRepository.Verify(r => r.GetByIdAsync(999), Times.Once);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace CarRentalGridForm.Tests.BL
         public async Task AddCar_EmptyBrand_ThrowsArgumentException()
         {
             // Arrange
-            var invalidCar = new Car
+            var invalidCar =  new Car
             {
                 Brand = null,
                 LicensePlate = "А123БВ78",

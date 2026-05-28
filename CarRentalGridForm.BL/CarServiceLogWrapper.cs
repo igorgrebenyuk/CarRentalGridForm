@@ -40,12 +40,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Возвращает машину по ID с логированием производительности
         /// </summary>
-        public Car GetCarById(int id)
+        public async Task<Car?> GetCarByIdAsync(int id)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = carService.GetCarById(id);
+            var result = await carService.GetCarByIdAsync(id);
 
             watch.Stop();
             var found = result != null;

@@ -16,12 +16,12 @@ public class MySqlCarRepository : ICarRepository
         return items;
     }
 
-    Car? ICarRepository.GetById(int id)
+    async Task<Car?> ICarRepository.GetByIdAsync(int id)
     {
         using var db = new CarRentalContext();
-        var item = db.Cars
+        var item = await db.Cars
             .AsNoTracking()
-            .FirstOrDefault(x => x.Id == id);
+            .FirstOrDefaultAsync(x => x.Id == id);
         return item;
     }
 

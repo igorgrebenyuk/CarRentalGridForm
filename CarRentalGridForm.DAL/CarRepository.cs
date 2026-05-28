@@ -30,7 +30,9 @@ namespace CarRentalGridForm.DAL
         /// </summary>
         /// <param name="id">Идентификатор автомобиля.</param>
         /// <returns>Автомобиль с указанным ID или null, если не найден.</returns>
-        public Car GetById(int id) => cars.FirstOrDefault(c => c.Id == id);
+        public Task<Car?> GetByIdAsync(int id) =>
+        Task.FromResult(cars.FirstOrDefault(c => c.Id == id));
+
 
         /// <summary>
         /// Добавляет новый автомобиль в хранилище с присвоением уникального ID.

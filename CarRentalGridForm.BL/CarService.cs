@@ -32,7 +32,7 @@ namespace CarRentalGridForm.BL
         /// </summary>
         /// <param name="id">Идентификатор автомобиля.</param>
         /// <returns>Автомобиль с указанным ID.</returns>
-        public Car GetCarById(int id) => repository.GetById(id);
+        public async Task<Car?> GetCarByIdAsync(int id) => await repository.GetByIdAsync(id);
 
         /// <summary>
         /// Добавляет новый автомобиль после проверки валидности данных.

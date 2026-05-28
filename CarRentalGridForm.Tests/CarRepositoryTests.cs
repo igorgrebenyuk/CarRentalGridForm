@@ -73,13 +73,13 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод GetById возвращает автомобиль при наличии
         /// </summary>
         [Fact]
-        public void GetById_ExistingId_ReturnsCar()
+        public async Task GetById_ExistingId_ReturnsCar()
         {
             // Arrange уже выполнен в конструкторе
             var expectedId = repository.GetAll().First().Id;
 
             // Act
-            var result = repository.GetById(expectedId);
+            var result = await repository.GetByIdAsync(expectedId);
 
             // Assert
             result.Should().NotBeNull();
@@ -90,12 +90,12 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод GetById возвращает null при отсутствии автомобиля
         /// </summary>
         [Fact]
-        public void GetById_NonExistingId_ReturnsNull()
+        public async Task GetById_NonExistingId_ReturnsNull()
         {
             // Arrange уже выполнен в конструкторе
 
             // Act
-            var result = repository.GetById(9999);
+            var result = await repository.GetByIdAsync(9999);
 
             // Assert
             result.Should().BeNull();
