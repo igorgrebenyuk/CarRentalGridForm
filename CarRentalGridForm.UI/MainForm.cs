@@ -73,7 +73,7 @@ namespace CarRentalGridForm.UI
             }
         }
 
-        private void btnDeleteCar_Click(object sender, EventArgs e)
+        private async void btnDeleteCar_Click(object sender, EventArgs e)
         {
             if (bindingSource.Current is Car selectedCar)
             {
@@ -85,7 +85,7 @@ namespace CarRentalGridForm.UI
 
                 if (result == DialogResult.Yes)
                 {
-                    carService.DeleteCar(selectedCar.Id);
+                    await carService.DeleteCarAsync(selectedCar.Id);
                     LoadData();
                     UpdateStatusInfo();
                 }

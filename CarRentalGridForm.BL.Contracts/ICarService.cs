@@ -36,7 +36,7 @@ namespace CarRentalGridForm.BL.Contracts
         /// Удаляет автомобиль по уникальному идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор автомобиля для удаления.</param>
-        void DeleteCar(int id);
+        Task DeleteCarAsync(int id);
 
         /// <summary>
         /// Формирует сводную статистику по парку автомобилей.

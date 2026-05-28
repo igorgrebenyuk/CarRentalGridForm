@@ -30,6 +30,6 @@ namespace CarRentalGridForm.DAL.Contracts
         /// <summary>
         /// Удалить автомобиль по ID
         /// </summary>
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }

@@ -206,14 +206,14 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод Delete удаляет автомобиль из коллекции
         /// </summary>
         [Fact]
-        public void Delete_ExistingCar_RemovesFromCollection()
+        public async Task Delete_ExistingCar_RemovesFromCollection()
         {
             // Arrange уже выполнен в конструкторе
             var carToDelete = repository.GetAll().First();
             var carId = carToDelete.Id;
 
             // Act
-            repository.Delete(carId);
+            await repository.DeleteAsync(carId);
 
             // Assert
             repository.GetAll().Should().HaveCount(2);
@@ -224,13 +224,13 @@ namespace CarRentalGridForm.Tests.DAL
         /// Тест проверяет, что метод Delete не изменяет коллекцию при удалении несуществующего автомобиля
         /// </summary>
         [Fact]
-        public void Delete_NonExistingCar_DoesNotChangeCollection()
+        public async Task Delete_NonExistingCar_DoesNotChangeCollection()
         {
             // Arrange уже выполнен в конструкторе
             var originalCount = repository.GetAll().Count;
 
             // Act
-            repository.Delete(9999);
+            await repository.DeleteAsync(9999);
 
             // Assert
             repository.GetAll().Should().HaveCount(originalCount);

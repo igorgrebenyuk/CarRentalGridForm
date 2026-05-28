@@ -204,7 +204,7 @@ namespace CarRentalGridForm.Tests.BL
 
             // Assert
             await act.Should().ThrowAsync<ArgumentException>().WithMessage($"Расход топлива должен быть меньше {CarLimits.MaxConsumption} литров");
-            mockRepository.Verify(r => r.AddAsync   (It.IsAny<Car>()), Times.Never);
+            mockRepository.Verify(r => r.AddAsync(It.IsAny<Car>()), Times.Never);
         }
 
         /// <summary>
@@ -327,16 +327,16 @@ namespace CarRentalGridForm.Tests.BL
         /// Тест проверяет что метод DeleteCar вызывает удаление в репозитории с правильным ID
         /// </summary>
         [Fact]
-        public void DeleteCar_ValidId_CallsRepositoryDelete()
+        public async Task DeleteCar_ValidId_CallsRepositoryDelete()
         {
             // Arrange
             var carId = 42;
 
             // Act
-            service.DeleteCar(carId);
+            await service.DeleteCarAsync(carId);
 
             // Assert
-            mockRepository.Verify(r => r.Delete(carId), Times.Once);
+            mockRepository.Verify(r => r.DeleteAsync(carId), Times.Once);
         }
 
         /// <summary>

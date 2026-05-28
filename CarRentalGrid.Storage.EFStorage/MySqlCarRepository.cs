@@ -54,15 +54,15 @@ public class MySqlCarRepository : ICarRepository
         }
     }
 
-    void ICarRepository.Delete(int id)
+    async Task ICarRepository.DeleteAsync(int id)
     {
         using var db = new CarRentalContext();
-        var item = db.Cars
-            .FirstOrDefault(x => x.Id == id);
+        var item = await db.Cars
+            .FirstOrDefaultAsync(x => x.Id == id);
         if (item != null)
         {
             db.Cars.Remove(item);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
     }
 }

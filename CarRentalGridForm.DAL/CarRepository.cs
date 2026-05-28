@@ -60,7 +60,11 @@ namespace CarRentalGridForm.DAL
         /// Удаляет автомобиль из хранилища по уникальному идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор автомобиля для удаления.</param>
-        public void Delete(int id) => cars.RemoveAll(c => c.Id == id);
+        public Task DeleteAsync(int id)
+        {
+            cars.RemoveAll(c => c.Id == id);
+            return Task.CompletedTask;
+        }
 
         private void SeedInitialData()
         {

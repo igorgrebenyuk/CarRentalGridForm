@@ -99,12 +99,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Удаляет автомобиль по ID с логированием производительности
         /// </summary>
-        public void DeleteCar(int id)
+        public async Task DeleteCarAsync(int id)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            carService.DeleteCar(id);
+            await carService.DeleteCarAsync(id);
 
             watch.Stop();
             logger.LogDebug(
