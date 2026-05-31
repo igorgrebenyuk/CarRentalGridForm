@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 namespace CarRentalGrid.Storage.EFStorage;
 
 /// <summary>
-/// Репозиторий для работы с сущностью <see cref="Car"/> через Entity Framework Core и MS SQL Server.
+/// Репозиторий для работы с сущностью <see cref="Car"/> через Entity Framework Core .
 /// Реализует интерфейс <see cref="ICarRepository"/>.
 /// </summary>
-public class MySqlCarRepository : ICarRepository
+public class EfCarRepository : ICarRepository
 {
     /// <summary>
     /// Асинхронно получает все автомобили из базы данных, отсортированные по марке.
@@ -68,7 +68,6 @@ public class MySqlCarRepository : ICarRepository
             item.RentCostPerMinute = car.RentCostPerMinute;
 
 
-            db.Update(item);
             await db.SaveChangesAsync();
         }
     }

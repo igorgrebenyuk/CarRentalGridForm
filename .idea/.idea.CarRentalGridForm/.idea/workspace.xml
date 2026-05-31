@@ -201,6 +201,7 @@
       <workItem from="1779979810989" duration="156000" />
       <workItem from="1779990619001" duration="145000" />
       <workItem from="1779996137416" duration="258000" />
+      <workItem from="1779997568502" duration="198000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -498,7 +499,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779996384067</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Саммари + сделал норм название БД">
+      <option name="closed" value="true" />
+      <created>1779997629873</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1779997629873</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="убрал ненужную константу и добавил новые , чтобы избавиться от магических чисел" />
     <MESSAGE value="убрал кар валидатор" />
     <MESSAGE value="Почти всё" />
     <MESSAGE value="убрал кар валидатор и переделал валидацию через биндинги" />
@@ -544,7 +552,8 @@
     <MESSAGE value="Сделал Метод delete ассинхронным" />
     <MESSAGE value="Оформил GetById асинхроном" />
     <MESSAGE value="GetAllCarsAsync и GetStatisticsAsync сделал асинхронным" />
-    <option name="LAST_COMMIT_MESSAGE" value="GetAllCarsAsync и GetStatisticsAsync сделал асинхронным" />
+    <MESSAGE value="Саммари + сделал норм название БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Саммари + сделал норм название БД" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

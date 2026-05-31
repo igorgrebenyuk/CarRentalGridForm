@@ -33,7 +33,7 @@ namespace CarRentalGridForm
 
             ApplicationConfiguration.Initialize();
 
-            ICarRepository dbrepository = new MySqlCarRepository();
+            ICarRepository dbrepository = new EfCarRepository();
             ICarService service = new CarService(dbrepository);
 
             ICarService loggingWrapper = new CarServiceLogWrapper(service, logger);
