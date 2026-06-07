@@ -24,12 +24,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Возвращает все машины    с логированием производительности
         /// </summary>
-        public List<Car> GetAllCars()
+        public async Task<List<Car>> GetAllCarsAsync()
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = carService.GetAllCars();
+            var result = await carService.GetAllCarsAsync();
 
             watch.Stop();
             var count = result != null ? result.Count : 0;
@@ -40,12 +40,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Возвращает машину по ID с логированием производительности
         /// </summary>
-        public Car GetCarById(int id)
+        public async Task<Car?> GetCarByIdAsync(int id)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = carService.GetCarById(id);
+            var result = await carService.GetCarByIdAsync(id);
 
             watch.Stop();
             var found = result != null;
@@ -59,12 +59,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Добавляет машину с логированием производительности
         /// </summary>
-        public void AddCar(Car car)
+        public async Task AddCarAsync(Car car)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            carService.AddCar(car);
+             await carService.AddCarAsync(car);
 
             watch.Stop();
             var brand = car != null ? car.Brand : null;
@@ -79,12 +79,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Обновляет автомобиль с логированием производительности
         /// </summary>
-        public void UpdateCar(Car car)
+        public async Task UpdateCarAsync(Car car)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            carService.UpdateCar(car);
+            await carService.UpdateCarAsync(car);
 
             watch.Stop();
             var brand = car != null ? car.Brand : null;
@@ -99,12 +99,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Удаляет автомобиль по ID с логированием производительности
         /// </summary>
-        public void DeleteCar(int id)
+        public async Task DeleteCarAsync(int id)
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            carService.DeleteCar(id);
+            await carService.DeleteCarAsync(id);
 
             watch.Stop();
             logger.LogDebug(
@@ -117,12 +117,12 @@ namespace CarRentalGridForm.BL
         /// <summary>
         /// Возвращает статистику с логированием производительности
         /// </summary>
-        public Statistics GetStatistics()
+        public async Task<Statistics> GetStatisticsAsync()
         {
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = carService.GetStatistics();
+            var result = await carService.GetStatisticsAsync();
 
             watch.Stop();
             var totalCars = result != null ? result.TotalCars : 0;

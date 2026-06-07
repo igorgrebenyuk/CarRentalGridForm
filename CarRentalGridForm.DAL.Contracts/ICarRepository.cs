@@ -10,26 +10,26 @@ namespace CarRentalGridForm.DAL.Contracts
         /// <summary>
         /// Получить все автомобили
         /// </summary>
-        List<Car> GetAll();
+        Task<List<Car>> GetAllCarsAsync();
 
         /// <summary>
         /// Получить автомобиль по ID
         /// </summary>
-        Car GetById(int id);
+        Task <Car?> GetByIdAsync(int id);
 
         /// <summary>
         /// Добавить автомобиль
         /// </summary>
-        void Add(Car car);
+        Task<Car> AddAsync(Car car);
 
         /// <summary>
         /// Обновить автомобиль
         /// </summary>
-        void Update(Car car);
+        Task UpdateAsync(Car car);
 
         /// <summary>
         /// Удалить автомобиль по ID
         /// </summary>
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }

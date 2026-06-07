@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarRentalGrid.Storage.EFStorage\CarRentalGrid.Storage.EFStorage.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.BL.Contracts\CarRentalGridForm.BL.Contracts.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.BL\CarRentalGridForm.BL.csproj" />
     <ProjectReference Include="..\CarRentalGridForm.Constants\CarRentalGridForm.Constants.csproj" />
@@ -20,6 +21,7 @@
     <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0" />
+    <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

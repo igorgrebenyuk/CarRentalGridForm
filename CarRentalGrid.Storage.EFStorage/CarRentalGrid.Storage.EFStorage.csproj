@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarRentalGrid.Storage.EFStorage\CarRentalGrid.Storage.EFStorage.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CarRentalGridForm.DAL.Contracts\CarRentalGridForm.DAL.Contracts.csproj" />
-    <ProjectReference Include="..\CarRentalGridForm.Models\CarRentalGridForm.Models.csproj" />
   </ItemGroup>
 
 </Project>

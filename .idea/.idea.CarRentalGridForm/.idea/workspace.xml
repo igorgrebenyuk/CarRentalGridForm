@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +26,17 @@
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;igorgrebenyuk&quot;
   }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOR3StFM7exhSv&quot;,
+        &quot;number&quot;: 11
+      },
+      &quot;lastSeen&quot;: 1779880005720
+    }
+  ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -50,26 +59,32 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Project.CarRentalGridForm.UI.executor&quot;: &quot;Run&quot;,
     &quot;.NET Project.CarRentalGridForm.executor&quot;: &quot;Run&quot;,
     &quot;8a107f78-20f5-4ab2-bc5f-163adac46e15.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#9 on Dev__Logging&amp;&amp;Collection&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#11 on Dev__EfCore&amp;&amp;Assync&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;
+    ]
   }
 }</component>
   <component name="RunManager" selected=".NET Project.CarRentalGridForm">
     <configuration name="CarRentalGridForm" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/CarRentalGridForm.UI/bin/Debug/net10.0-windows/CarRentalGridForm.UI.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CarRentalGridForm.UI/bin/Debug/net10.0-windows" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -77,12 +92,12 @@
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="AUTO_ATTACH_CHILDREN" value="0" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CarRentalGridForm/CarRentalGridForm.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CarRentalGridForm.UI/CarRentalGridForm.UI.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="Unloaded" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_KIND" value="StaticMethod" />
+      <option name="PROJECT_TFM" value="net10.0-windows" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -172,6 +187,21 @@
       <workItem from="1778178291572" duration="3373000" />
       <workItem from="1778185275292" duration="116000" />
       <workItem from="1778185905373" duration="549000" />
+      <workItem from="1779620630731" duration="136000" />
+      <workItem from="1779621191939" duration="3982000" />
+      <workItem from="1779644749856" duration="923000" />
+      <workItem from="1779647510092" duration="112000" />
+      <workItem from="1779657425811" duration="63000" />
+      <workItem from="1779720361886" duration="293000" />
+      <workItem from="1779721914395" duration="3475000" />
+      <workItem from="1779879983236" duration="149000" />
+      <workItem from="1779882508996" duration="140000" />
+      <workItem from="1779882699468" duration="135000" />
+      <workItem from="1779975432129" duration="348000" />
+      <workItem from="1779979810989" duration="156000" />
+      <workItem from="1779990619001" duration="145000" />
+      <workItem from="1779996137416" duration="258000" />
+      <workItem from="1779997568502" duration="198000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -397,7 +427,87 @@
       <option name="project" value="LOCAL" />
       <updated>1778186344443</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Коммит для создания ПР">
+      <option name="closed" value="true" />
+      <created>1779623493090</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1779623493091</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Создание библиотеки классов для БД">
+      <option name="closed" value="true" />
+      <created>1779625861163</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1779625861163</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Комичу на всякий случай , а так я описал синхронно все методы из ICarRepository.cs">
+      <option name="closed" value="true" />
+      <created>1779720550126</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1779720550126</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Сделал так чтобы БД работала синхронно">
+      <option name="closed" value="true" />
+      <created>1779726653516</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1779726653516</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Сделал Метод Add асинхронным">
+      <option name="closed" value="true" />
+      <created>1779880048521</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1779880048524</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Сделал Update асинхронным">
+      <option name="closed" value="true" />
+      <created>1779882621319</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1779882621319</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Сделал Метод delete ассинхронным">
+      <option name="closed" value="true" />
+      <created>1779979861413</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1779979861413</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Оформил GetById асинхроном">
+      <option name="closed" value="true" />
+      <created>1779990663143</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1779990663143</updated>
+    </task>
+    <task id="LOCAL-00037" summary="GetAllCarsAsync и GetStatisticsAsync сделал асинхронным">
+      <option name="closed" value="true" />
+      <created>1779996384067</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1779996384067</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Саммари + сделал норм название БД">
+      <option name="closed" value="true" />
+      <created>1779997629873</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1779997629873</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,17 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="в кар.cs тоже поправил" />
-    <MESSAGE value="Поправил метод CellPainting" />
-    <MESSAGE value="Сменил название формы на более коректное" />
-    <MESSAGE value="и программ.cs тоже поправил" />
-    <MESSAGE value="некоторые ошибки исправил" />
-    <MESSAGE value="Добавил классы" />
-    <MESSAGE value="Перенёс все файлы в свои классы" />
-    <MESSAGE value="Всё настроил" />
-    <MESSAGE value="Проверил все файлы , всё должно быть верно" />
-    <MESSAGE value="Сделал private static void" />
-    <MESSAGE value="убрал ненужную константу и добавил новые , чтобы избавиться от магических чисел" />
     <MESSAGE value="убрал кар валидатор" />
     <MESSAGE value="Почти всё" />
     <MESSAGE value="убрал кар валидатор и переделал валидацию через биндинги" />
@@ -443,7 +542,18 @@
     <MESSAGE value="Написал  логеры для БЛ" />
     <MESSAGE value="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера" />
     <MESSAGE value="Чуть-чуть поправил" />
-    <option name="LAST_COMMIT_MESSAGE" value="Чуть-чуть поправил" />
+    <MESSAGE value="Создал ветвь для ПР" />
+    <MESSAGE value="Коммит для создания ПР" />
+    <MESSAGE value="Создание библиотеки классов для БД" />
+    <MESSAGE value="Комичу на всякий случай , а так я описал синхронно все методы из ICarRepository.cs" />
+    <MESSAGE value="Сделал так чтобы БД работала синхронно" />
+    <MESSAGE value="Сделал Метод Add асинхронным" />
+    <MESSAGE value="Сделал Update асинхронным" />
+    <MESSAGE value="Сделал Метод delete ассинхронным" />
+    <MESSAGE value="Оформил GetById асинхроном" />
+    <MESSAGE value="GetAllCarsAsync и GetStatisticsAsync сделал асинхронным" />
+    <MESSAGE value="Саммари + сделал норм название БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Саммари + сделал норм название БД" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -23,30 +23,35 @@ namespace CarRentalGridForm.DAL
         /// Возвращает список всех автомобилей из хранилища.
         /// </summary>
         /// <returns>Список всех автомобилей.</returns>
-        public List<Car> GetAll() => new(cars);
+        public Task<List<Car>> GetAllCarsAsync() =>
+        Task.FromResult(new List<Car>(cars));
+
 
         /// <summary>
         /// Возвращает автомобиль по уникальному идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор автомобиля.</param>
         /// <returns>Автомобиль с указанным ID или null, если не найден.</returns>
-        public Car GetById(int id) => cars.FirstOrDefault(c => c.Id == id);
+        public Task<Car?> GetByIdAsync(int id) =>
+        Task.FromResult(cars.FirstOrDefault(c => c.Id == id));
+
 
         /// <summary>
         /// Добавляет новый автомобиль в хранилище с присвоением уникального ID.
         /// </summary>
         /// <param name="car">Автомобиль для добавления.</param>
-        public void Add(Car car)
+        public Task<Car> AddAsync(Car car)
         {
             car.Id = nextId++;
             cars.Add(car);
+            return Task.FromResult(car);
         }
 
         /// <summary>
         /// Обновляет данные существующего автомобиля в хранилище.
         /// </summary>
         /// <param name="car">Автомобиль с обновлёнными данными.</param>
-        public void Update(Car car)
+        public async Task UpdateAsync(Car car)
         {
             var index = cars.FindIndex(c => c.Id == car.Id);
             if (index >= 0)
@@ -59,11 +64,15 @@ namespace CarRentalGridForm.DAL
         /// Удаляет автомобиль из хранилища по уникальному идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор автомобиля для удаления.</param>
-        public void Delete(int id) => cars.RemoveAll(c => c.Id == id);
+        public Task DeleteAsync(int id)
+        {
+            cars.RemoveAll(c => c.Id == id);
+            return Task.CompletedTask;
+        }
 
         private void SeedInitialData()
         {
-            Add(new Car
+            AddAsync(new Car
             {
                 Brand = "Hyundai",
                 LicensePlate = "А123БВ78",
@@ -73,7 +82,7 @@ namespace CarRentalGridForm.DAL
                 RentCostPerMinute = 5.5m
             });
 
-            Add(new Car
+            AddAsync(new Car
             {
                 Brand = "Lada",
                 LicensePlate = "В456ГД78",
@@ -83,7 +92,7 @@ namespace CarRentalGridForm.DAL
                 RentCostPerMinute = 3.0m
             });
 
-            Add(new Car
+            AddAsync(new Car
             {
                 Brand = "Mitsubishi",
                 LicensePlate = "Е789ЖЗ78",

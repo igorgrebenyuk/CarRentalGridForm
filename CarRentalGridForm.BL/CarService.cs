@@ -25,48 +25,48 @@ namespace CarRentalGridForm.BL
         /// Возвращает список всех автомобилей из репозитория.
         /// </summary>
         /// <returns>Список всех автомобилей.</returns>
-        public List<Car> GetAllCars() => repository.GetAll();
+        public async Task<List<Car>> GetAllCarsAsync() => await repository.GetAllCarsAsync();
 
         /// <summary>
         /// Возвращает автомобиль по уникальному идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор автомобиля.</param>
         /// <returns>Автомобиль с указанным ID.</returns>
-        public Car GetCarById(int id) => repository.GetById(id);
+        public async Task<Car?> GetCarByIdAsync(int id) => await repository.GetByIdAsync(id);
 
         /// <summary>
         /// Добавляет новый автомобиль после проверки валидности данных.
         /// </summary>
         /// <param name="car">Автомобиль для добавления.</param>
-        public void AddCar(Car car)
+        public async Task AddCarAsync(Car car)
         {
             ValidateCar(car);
-            repository.Add(car);
+            await repository.AddAsync(car);
         }
 
         /// <summary>
         /// Обновляет данные существующего автомобиля после проверки валидности.
         /// </summary>
         /// <param name="car">Автомобиль с обновлёнными данными.</param>
-        public void UpdateCar(Car car)
+        public async Task UpdateCarAsync(Car car)
         {
             ValidateCar(car);
-            repository.Update(car);
+            await repository.UpdateAsync(car);
         }
 
         /// <summary>
         /// Удаляет автомобиль из системы по уникальному идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор автомобиля для удаления.</param>
-        public void DeleteCar(int id) => repository.Delete(id);
+        public Task DeleteCarAsync(int id) => repository.DeleteAsync(id);
 
         /// <summary>
         /// Формирует и возвращает статистику по парку автомобилей.
         /// </summary>
         /// <returns>Объект статистики с основными показателями.</returns>
-        public Statistics GetStatistics()
+        public async Task<Statistics> GetStatisticsAsync()
         {
-            var cars = repository.GetAll();
+            var cars = await repository.GetAllCarsAsync();
 
             return new Statistics
             {
