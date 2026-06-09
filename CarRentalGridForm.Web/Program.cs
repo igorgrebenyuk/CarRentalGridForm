@@ -13,6 +13,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<CarRentalContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddScoped<ICarService , CarService>();
+builder.Services.AddScoped<IReader, CarRentalContext>();
 builder.Services.AddScoped<ICarRepository, EfCarRepository>();
 
 var app = builder.Build();
