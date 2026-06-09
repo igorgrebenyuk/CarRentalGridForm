@@ -1,7 +1,19 @@
+using CarRentalGrid.Storage.EFStorage;
+using CarRentalGridForm.BL;
+using CarRentalGridForm.BL.Contracts;
+using CarRentalGridForm.DAL.Contracts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<CarRentalContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddScoped<ICarService , CarService>();
+builder.Services.AddScoped<ICarRepository, EfCarRepository>();
 
 var app = builder.Build();
 

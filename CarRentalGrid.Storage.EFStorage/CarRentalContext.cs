@@ -1,4 +1,5 @@
 ﻿using CarRentalGridForm.Models;
+using CarRentalGridForm.DAL.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarRentalGrid.Storage.EFStorage;
@@ -6,7 +7,7 @@ namespace CarRentalGrid.Storage.EFStorage;
 /// <summary>
 /// Контекст БД для работы с товарами через MS SQL Server.
 /// </summary>
-public class CarRentalContext : DbContext
+public class CarRentalContext : DbContext, IReader
 {
     /// <summary>
     /// Набор данных автомобилей (<see cref="Car"/>).
@@ -26,5 +27,12 @@ public class CarRentalContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRentaldb;Trusted_Connection=True;");
+    }
+
+    public IQueryable<TEntity> Read<TEntity>() where TEntity : class
+    {
+        return base.Set<TEntity>()
+            .AsNoTracking()
+            .AsQueryable();
     }
 }
