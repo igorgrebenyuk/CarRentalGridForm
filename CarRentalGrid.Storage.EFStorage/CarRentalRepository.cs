@@ -8,19 +8,29 @@ namespace CarRentalGrid.Storage.EFStorage
     {
 
         private readonly IReader reader;
+        private readonly IWriter writer;
 
-        public CarRentalRepository(IReader reader)
+        public CarRentalRepository(IReader reader , IWriter writer  )
         {
             this.reader = reader;
+            this.writer = writer;
         }
-        public Task<Car> AddAsync(Car car)
+        public async Task<Car> AddAsync(Car car)
         {
-            throw new NotImplementedException();
+            writer.Add(car);
+            await writer.SaveChangesAsync();
+            return car;
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var item = await reader.Read<Car>()
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (item != null)
+            {
+                writer.Delete(item);
+                await writer.SaveChangesAsync();
+            }
         }
 
         public Task<List<Car>> GetAllCarsAsync()
@@ -36,9 +46,23 @@ namespace CarRentalGrid.Storage.EFStorage
             .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task UpdateAsync(Car car)
+        public async Task UpdateAsync(Car car)
         {
-            throw new NotImplementedException();
+            var item = await reader.Read<Car>()
+                .FirstOrDefaultAsync(x => x.Id == car.Id);
+            if (item != null)
+            {
+
+                item.Brand = car.Brand;
+                item.LicensePlate = car.LicensePlate;
+                item.Mileage = car.Mileage;
+                item.AverageConsumption = car.AverageConsumption;
+                item.CurrentFuel = car.CurrentFuel;
+                item.RentCostPerMinute = car.RentCostPerMinute;
+
+
+                await writer.SaveChangesAsync();
+            }
         }
     }
 }
