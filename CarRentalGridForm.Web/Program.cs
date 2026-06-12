@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<CarRentalContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ICarService , CarService>();
 builder.Services.AddScoped<IReader, CarRentalContext>();
 builder.Services.AddScoped<IWriter, CarRentalContext>();

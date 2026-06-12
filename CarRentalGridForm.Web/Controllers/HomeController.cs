@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using CarRentalGridForm.BL.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 
@@ -6,10 +7,16 @@ namespace WebApplication1.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
+    private readonly ICarService carService;
+    public HomeController(ICarService carService)
     {
-        return View();
+        this.carService = carService;
     }
+    public async Task<IActionResult> Index()
+    {
+        var cars = await carService.GetAllCarsAsync();
+        return View(cars);
+    }   
 
     public IActionResult Privacy()
     {

@@ -11,7 +11,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="" />
+    <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Web/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Web/Views/Home/Index.cshtml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +52,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/78392888e95a4b7c90c6abf02df21723fc0eb7a316153733fd54a524ce2d2f3/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b51e970d122854a7a6cc153c0b0c9903668551dffe92fc4d06d14c6d29a4989/GenericCollectionAssertions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -249,6 +255,8 @@
       <workItem from="1780858374602" duration="1656000" />
       <workItem from="1781032927546" duration="79000" />
       <workItem from="1781035652637" duration="101000" />
+      <workItem from="1781205311145" duration="154000" />
+      <workItem from="1781213691500" duration="578000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -578,7 +586,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781035709719</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Сделал IWriter">
+      <option name="closed" value="true" />
+      <created>1781205341972</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1781205341972</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,7 +615,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Проверка" />
     <MESSAGE value="проверка" />
     <MESSAGE value="эту часть сделал" />
     <MESSAGE value="создаю ПР" />
@@ -624,7 +639,8 @@
     <MESSAGE value="Создание ветки для РП + создал MVC" />
     <MESSAGE value="дописал програм в веб проекте и написал реадер" />
     <MESSAGE value="Полностью реализовал метод IReader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Полностью реализовал метод IReader" />
+    <MESSAGE value="Сделал IWriter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал IWriter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

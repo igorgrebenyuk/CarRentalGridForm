@@ -20,6 +20,16 @@ public class CarRentalContext : DbContext, IReader , IWriter
     /// </summary>
     public CarRentalContext() => Database.EnsureCreated();
 
+    public CarRentalContext(DbContextOptions<CarRentalContext> options) : base(options)
+    {
+        Database.EnsureCreated();
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRentaldb;Trusted_Connection=True;");
+    }
+
     public IQueryable<TEntity> Read<TEntity>() where TEntity : class
     {
         return base.Set<TEntity>()
