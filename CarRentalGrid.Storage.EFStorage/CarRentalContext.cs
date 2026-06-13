@@ -18,17 +18,11 @@ public class CarRentalContext : DbContext, IReader , IWriter
     /// Инициализирует контекст и автоматически создаёт базу данных при первом запуске,
     /// если она не существует (<see cref="Database.EnsureCreated"/>).
     /// </summary>
-    public CarRentalContext() => Database.EnsureCreated();
-
     public CarRentalContext(DbContextOptions<CarRentalContext> options) : base(options)
     {
         Database.EnsureCreated();
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRentaldb;Trusted_Connection=True;");
-    }
 
     public IQueryable<TEntity> Read<TEntity>() where TEntity : class
     {

@@ -10,52 +10,48 @@ namespace CarRentalGrid.Storage.EFStorage;
 /// </summary>
 public class EfCarRepository : ICarRepository
 {
-    /// <summary>
-    /// Асинхронно получает все автомобили из базы данных, отсортированные по марке.
-    /// Использует <see cref="AsNoTracking"/> для оптимизации чтения.
-    /// </summary>
-    public async Task<List<Car>> GetAllCarsAsync()
-    {
-        using var db =  new CarRentalContext();
-        var items = await db.Cars
-        .AsNoTracking()
-        .OrderBy(x => x.Brand)
-        .ToListAsync();
-        return items;
-    }
+    private readonly IReader reader;
+    private readonly IWriter writer;
 
-    /// <summary>
-    /// Асинхронно находит автомобиль по уникальному идентификатору.
-    /// Возвращает <c>null</c>, если запись не найдена.
-    /// </summary>
-    async Task<Car?> ICarRepository.GetByIdAsync(int id)
+    public EfCarRepository(IReader reader, IWriter writer)
     {
-        using var db = new CarRentalContext();
-        var item = await db.Cars
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == id);
-        return item;
+        this.reader = reader;
+        this.writer = writer;
     }
-
-    /// <summary>
-    /// Асинхронно добавляет новый автомобиль в базу данных и сохраняет изменения.
-    /// </summary>
-    async Task<Car> ICarRepository.AddAsync(Car car)
+    public async Task<Car> AddAsync(Car car)
     {
-        using var db = new CarRentalContext();
-        db.Cars.Add(car);
-        await db.SaveChangesAsync();
+        writer.Add(car);
+        await writer.SaveChangesAsync();
         return car;
     }
 
-    /// <summary>
-    /// Асинхронно обновляет существующий автомобиль по идентификатору.
-    /// Если запись найдена, обновляет все поля и сохраняет изменения.
-    /// </summary>
-    async Task ICarRepository.UpdateAsync(Car car)
+    public async Task DeleteAsync(int id)
     {
-        using var db = new CarRentalContext();
-        var item = await db.Cars
+        var item = await reader.Read<Car>()
+            .FirstOrDefaultAsync(x => x.Id == id);
+        if (item != null)
+        {
+            writer.Delete(item);
+            await writer.SaveChangesAsync();
+        }
+    }
+
+    public Task<List<Car>> GetAllCarsAsync()
+    {
+        return reader.Read<Car>()
+            .OrderBy(x => x.Brand)
+            .ToListAsync();
+    }
+
+    public Task<Car?> GetByIdAsync(int id)
+    {
+        return reader.Read<Car>()
+        .FirstOrDefaultAsync(x => x.Id == id);
+    }
+
+    public async Task UpdateAsync(Car car)
+    {
+        var item = await reader.Read<Car>()
             .FirstOrDefaultAsync(x => x.Id == car.Id);
         if (item != null)
         {
@@ -68,23 +64,7 @@ public class EfCarRepository : ICarRepository
             item.RentCostPerMinute = car.RentCostPerMinute;
 
 
-            await db.SaveChangesAsync();
-        }
-    }
-
-    /// <summary>
-    /// Асинхронно удаляет автомобиль по идентификатору.
-    /// Если запись найдена, удаляет её и сохраняет изменения.
-    /// </summary>
-    async Task ICarRepository.DeleteAsync(int id)
-    {
-        using var db = new CarRentalContext();
-        var item = await db.Cars
-            .FirstOrDefaultAsync(x => x.Id == id);
-        if (item != null)
-        {
-            db.Cars.Remove(item);
-            await db.SaveChangesAsync();
+            await writer.SaveChangesAsync();
         }
     }
 }
