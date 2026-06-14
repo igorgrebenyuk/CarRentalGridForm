@@ -12,6 +12,5 @@ namespace CarRentalGridForm.DAL.Contracts;
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
-        int SaveChanges();
 }
 

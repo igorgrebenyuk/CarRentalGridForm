@@ -12,11 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20f10261-f646-4451-a7b4-2bc3194feae5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarRentalGridForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/CarRentalRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/EfCarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGrid.Storage.EFStorage/EfCarRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Web/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarRentalGridForm.Web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRentalGridForm.Web/Views/Home/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +255,7 @@
       <workItem from="1781205311145" duration="154000" />
       <workItem from="1781213691500" duration="578000" />
       <workItem from="1781257478174" duration="60000" />
-      <workItem from="1781367861542" duration="753000" />
+      <workItem from="1781367861542" duration="1490000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -606,7 +601,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781257515329</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="убрал класс репозитория , перенес его код в ef storage&#10;переделал home контроллер и сделал index вьюху">
+      <option name="closed" value="true" />
+      <created>1781368660894</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1781368660894</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +630,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="эту часть сделал" />
     <MESSAGE value="создаю ПР" />
     <MESSAGE value="добавил классы для юнит тестов" />
     <MESSAGE value="Добавил все нужные нагет пакеты" />
@@ -652,7 +654,8 @@
     <MESSAGE value="Полностью реализовал метод IReader" />
     <MESSAGE value="Сделал IWriter" />
     <MESSAGE value="Сделал так чтобы таблица выводилась" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал так чтобы таблица выводилась" />
+    <MESSAGE value="убрал класс репозитория , перенес его код в ef storage&#10;переделал home контроллер и сделал index вьюху" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрал класс репозитория , перенес его код в ef storage&#10;переделал home контроллер и сделал index вьюху" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

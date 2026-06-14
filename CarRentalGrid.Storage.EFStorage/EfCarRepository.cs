@@ -38,7 +38,7 @@ public class EfCarRepository : ICarRepository
 
     public Task<List<Car>> GetAllCarsAsync()
     {
-        return reader.Read<Car>()
+        return reader.Read  <Car>()
             .OrderBy(x => x.Brand)
             .ToListAsync();
     }
@@ -63,7 +63,7 @@ public class EfCarRepository : ICarRepository
             item.CurrentFuel = car.CurrentFuel;
             item.RentCostPerMinute = car.RentCostPerMinute;
 
-
+            writer.Update(item);
             await writer.SaveChangesAsync();
         }
     }

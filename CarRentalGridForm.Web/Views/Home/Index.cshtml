@@ -1,21 +1,22 @@
 ﻿@model IReadOnlyCollection<CarRentalGridForm.Models.Car>
+
 @{
     ViewData["Title"] = "Аренда автомобилей";
 }
 
+
+
 <div class="container mt-4">
     <h1>Аренда автомобилей</h1>
-
     @if (!Model.Any())
     {
-        <div class="alert alert-info text-center mt-3">
+        <div class="alert alert-info text-center">
             Список автомобилей пуст.
-            <a href="#" data-bs-toggle="modal" data-bs-target="#createModal" class="alert-link">Добавить первый</a>
         </div>
     }
     else
     {
-        <table class="table table-hover mt-3">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Бренд</th>
@@ -30,6 +31,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var car in Model)
                 {
                     <tr>
@@ -45,41 +47,28 @@
                         <td>@car.Range</td>
                         <td>@car.TotalRentSum</td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal-@car.Id">Редактировать</button>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-@car.Id">Удалить</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal-@car.Id">Редактировать</button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@car.Id">>Удалить</button>
                         </td>
                     </tr>
 
-                    <div class="modal fade" id="deleteModal-@car.Id" tabindex="-1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form asp-action="Delete" method="post">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Удалить автомобиль</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div class="modal-body text-start">
-                                        <p>Вы уверены, что хотите удалить этот автомобиль?</p>
-                                        <p><strong>@car.Brand (@car.LicensePlate)</strong></p>
-                                        <input type="hidden" name="id" value="@car.Id" />
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                                        <button type="submit" class="btn btn-danger">Удалить</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+               
                 }
+
+              
+
+            
             </tbody>
         </table>
 
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#createModal">Добавить автомобиль</button>
+        <h3>Автомобилей с критическим уровнем топлива: @ViewBag.LowFuelCarsCount</h3>
     }
+    <!-- Кнопка добавления -->
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#createModal">Добавить автомобиль</button>
 </div>
 
 
+<!-- Модальное окно ДОБАВЛЕНИЯ автомобиля -->
 <div class="modal fade" id="createModal" tabindex="-1" role="document">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -99,19 +88,19 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Пробег автомобиля (км)</label>
-                        <input name="Mileage" type="number" step="0.1" min="0" class="form-control" required />
+                        <input name="Mileage" type="number" step="1" min="0" max="1000000" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Средний расход топлива</label>
-                        <input name="AverageConsumption" type="number" step="0.01" min="0" class="form-control" required />
+                        <input name="AverageConsumption" type="number" step="1" min="0" max="50" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Текущий объём топлива</label>
-                        <input name="CurrentFuel" type="number" step="0.1" min="0" class="form-control" required />
+                        <input name="CurrentFuel" type="number" step="1" min="0"  max="100" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Стоимость аренды за одну минуту</label>
-                        <input name="RentCostPerMinute" type="number" step="0.01" min="0" class="form-control" required />
+                        <input name="RentCostPerMinute" type="number" step="1" min="0" max="1000" class="form-control" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -124,53 +113,76 @@
 </div>
 
 
-@if (Model.Any())
+<!-- Модальные окна удаления для каждого авто -->
+@foreach (var car in Model)
 {
-    @foreach (var car in Model)
-    {
-        <div class="modal fade" id="editModal-@car.Id" tabindex="-1" role="document">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form asp-action="Edit" method="post">
-                        <input type="hidden" name="Id" value="@car.Id" />
-
-                        <div class="modal-header">
-                            <h5 class="modal-title">Редактировать @car.Brand</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Бренд</label>
-                                <input name="Brand" type="text" class="form-control" value="@car.Brand" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Государственный регистрационный номер</label>
-                                <input name="LicensePlate" type="text" class="form-control" value="@car.LicensePlate" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Пробег автомобиля (км)</label>
-                                <input name="Mileage" type="number" step="0.1" min="0" class="form-control" value="@car.Mileage" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Средний расход топлива</label>
-                                <input name="AverageConsumption" type="number" step="0.01" min="0" class="form-control" value="@car.AverageConsumption" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Текущий объём топлива</label>
-                                <input name="CurrentFuel" type="number" step="0.1" min="0" class="form-control" value="@car.CurrentFuel" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Стоимость аренды за одну минуту</label>
-                                <input name="RentCostPerMinute" type="number" step="0.01" min="0" class="form-control" value="@car.RentCostPerMinute" required />
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="modal fade" id="deleteModal-@car.Id" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="Delete" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Удалить автомобиль</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Вы уверены, что хотите удалить этот автомобиль?</p>
+                        <p><strong>@car.Brand</strong></p>
+                        <input type="hidden" name="id" value="@car.Id" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                    </div>
+                </form>
             </div>
         </div>
-    }
+    </div>
+}
+
+<!-- Модальное окно редактирования для каждого авто -->
+@foreach (var car in Model)
+{
+    <div class="modal fade" id="editModal-@car.Id" tabindex="-1" role="document">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" name="Id" value="@car.Id" />
+                    <div class="modal-header">
+                        <h5 class="modal-title">Редактировать автомобиль @car.Brand</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Бренд</label>
+                            <input name="Brand" type="text" class="form-control" value="@car.Brand" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Государственный регистрационный номер</label>
+                            <input name="LicensePlate" type="text" class="form-control" value="@car.LicensePlate" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Пробег автомобиля (км)</label>
+                            <input name="Mileage" type="number" step="1" min="0" max="1000000" class="form-control" value="@car.Mileage" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Средний расход топлива</label>
+                            <input name="AverageConsumption" type="number" step="1" min="0" max="50" class="form-control" value="@car.AverageConsumption" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Текущий объём топлива</label>
+                            <input name="CurrentFuel" type="number" step="1" min="0" max="100" class="form-control" value="@car.CurrentFuel" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Стоимость аренды за одну минуту</label>
+                            <input name="RentCostPerMinute" type="number" step="1" min="0" max="1000" class="form-control" value="@String.Format("{0:0.##}", car.RentCostPerMinute)" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 }

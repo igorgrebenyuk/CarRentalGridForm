@@ -24,6 +24,10 @@ public class HomeController : Controller
     public async Task<IActionResult> Index()
     {
         var cars = await carService.GetAllCarsAsync();
+        var statistics = await carService.GetStatisticsAsync();
+
+        ViewBag.LowFuelCarsCount = statistics.LowFuelCars;
+
         return View(cars);
     }
 
@@ -56,8 +60,17 @@ public class HomeController : Controller
             return View("Index", cars);
         }
 
-        await carService.UpdateCarAsync(car);
-        return RedirectToAction(nameof(Index));
+        try
+        {
+            await carService.UpdateCarAsync(car);
+            return RedirectToAction(nameof(Index));
+        }
+        catch (ArgumentException ex)
+        {
+            ModelState.AddModelError(string.Empty, ex.Message);
+            var cars = await carService.GetAllCarsAsync();
+            return View("Index", cars);
+        }
     }
 
     /// <summary>

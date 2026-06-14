@@ -43,6 +43,7 @@ namespace CarRentalGridForm.Models
         /// </summary>
         public decimal RentCostPerMinute { get; set; }
 
+
         /// <summary>
         /// Расчётный запас хода в часах.
         /// </summary>
