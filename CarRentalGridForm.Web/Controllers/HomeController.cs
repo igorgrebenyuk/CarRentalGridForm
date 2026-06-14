@@ -6,6 +6,9 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers;
 
+/// <summary>
+/// Контроллер для управления реестром автомобилей 
+/// </summary>
 public class HomeController : Controller
 {
     private readonly ICarService carService;
