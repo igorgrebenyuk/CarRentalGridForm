@@ -255,6 +255,7 @@
       <workItem from="1781257478174" duration="60000" />
       <workItem from="1781367861542" duration="1490000" />
       <workItem from="1781435046271" duration="92000" />
+      <workItem from="1781435998598" duration="103000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -616,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781435126766</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="сделал  саммари">
+      <option name="closed" value="true" />
+      <created>1781436057443</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1781436057444</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +646,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="добавил классы для юнит тестов" />
     <MESSAGE value="Добавил все нужные нагет пакеты" />
     <MESSAGE value="Создал класс для логирования БЛ" />
     <MESSAGE value="Написал  логеры для БЛ" />
@@ -662,7 +670,8 @@
     <MESSAGE value="Сделал так чтобы таблица выводилась" />
     <MESSAGE value="убрал класс репозитория , перенес его код в ef storage&#10;переделал home контроллер и сделал index вьюху" />
     <MESSAGE value="сделал фул индекс , решил проблему с редактированием данных + дообавил максимальные значения для заполнения данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="сделал фул индекс , решил проблему с редактированием данных + дообавил максимальные значения для заполнения данных" />
+    <MESSAGE value="сделал  саммари" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал  саммари" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -44,7 +44,7 @@ public class HomeController : Controller
         if (!ModelState.IsValid)
         {
             var cars = await carService.GetAllCarsAsync();
-            return View("Index", cars);
+            return View(nameof(Index), cars);
         }
 
         await carService.AddCarAsync(car);
@@ -55,12 +55,17 @@ public class HomeController : Controller
     /// Редактирует существующий автомобиль
     /// </summary>
     [HttpPost]
-    public async Task<IActionResult> Edit(Car car)
+    public async Task<IActionResult> Edit(int id, Car car)
     {
+        if (id != car.Id)
+        {
+            return BadRequest();
+        }
+
         if (!ModelState.IsValid)
         {
             var cars = await carService.GetAllCarsAsync();
-            return View("Index", cars);
+            return View(nameof(Index), cars);
         }
 
         try
@@ -72,9 +77,10 @@ public class HomeController : Controller
         {
             ModelState.AddModelError(string.Empty, ex.Message);
             var cars = await carService.GetAllCarsAsync();
-            return View("Index", cars);
+            return View(nameof(Index), cars);
         }
     }
+
 
     /// <summary>
     /// Удаляет автомобиль по Id

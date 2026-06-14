@@ -38,7 +38,7 @@
         /// <summary>
         /// Минимально допустимая стоимость аренды за минуту в рублях.
         /// </summary>
-        public const decimal MinRentCost = 0.01m;
+        public const decimal MinRentCost = 1.0m;
 
         /// <summary>
         /// Максимально допустимая стоимость аренды за минуту в рублях.

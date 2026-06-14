@@ -1,4 +1,6 @@
 ﻿@model IReadOnlyCollection<CarRentalGridForm.Models.Car>
+@using CarRentalGridForm.Constants
+
 
 @{
     ViewData["Title"] = "Аренда автомобилей";
@@ -48,7 +50,7 @@
                         <td>@car.TotalRentSum</td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal-@car.Id">Редактировать</button>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@car.Id">>Удалить</button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@car.Id">Удалить</button>
                         </td>
                     </tr>
 
@@ -88,19 +90,19 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Пробег автомобиля (км)</label>
-                        <input name="Mileage" type="number" step="1" min="0" max="1000000" class="form-control" required />
+                        <input name="Mileage" type="number" step="1" min="0" max=@CarLimits.MaxMileage class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Средний расход топлива</label>
-                        <input name="AverageConsumption" type="number" step="1" min="0" max="50" class="form-control" required />
+                        <input name="AverageConsumption" type="number" step="1" min=@CarLimits.MinConsumption max=@CarLimits.MaxConsumption class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Текущий объём топлива</label>
-                        <input name="CurrentFuel" type="number" step="1" min="0"  max="100" class="form-control" required />
+                        <input name="CurrentFuel" type="number" step="1" min=@CarLimits.MinFuel max=@CarLimits.MaxFuel class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Стоимость аренды за одну минуту</label>
-                        <input name="RentCostPerMinute" type="number" step="1" min="0" max="1000" class="form-control" required />
+                        <input name="RentCostPerMinute" type="number" step="1" min=@CarLimits.MinRentCost max=@CarLimits.MaxRentCost class="form-control" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -162,19 +164,19 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Пробег автомобиля (км)</label>
-                            <input name="Mileage" type="number" step="1" min="0" max="1000000" class="form-control" value="@car.Mileage" required />
+                            <input name="Mileage" type="number" step="1" min=@CarLimits.MinMileage max=@CarLimits.MaxMileage class="form-control" value="@car.Mileage" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Средний расход топлива</label>
-                            <input name="AverageConsumption" type="number" step="1" min="0" max="50" class="form-control" value="@car.AverageConsumption" required />
+                            <input name="AverageConsumption" type="number" step="1" min=@CarLimits.MinConsumption max=@CarLimits.MaxConsumption class="form-control" value="@car.AverageConsumption" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Текущий объём топлива</label>
-                            <input name="CurrentFuel" type="number" step="1" min="0" max="100" class="form-control" value="@car.CurrentFuel" required />
+                            <input name="CurrentFuel" type="number" step="1" min=@CarLimits.MinFuel max=@CarLimits.MaxFuel class="form-control" value="@car.CurrentFuel" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Стоимость аренды за одну минуту</label>
-                            <input name="RentCostPerMinute" type="number" step="1" min="0" max="1000" class="form-control" value="@String.Format("{0:0.##}", car.RentCostPerMinute)" required />
+                            <input name="RentCostPerMinute" type="number" step="1" min=@CarLimits.MinRentCost max=@CarLimits.MaxRentCost class="form-control" value="@String.Format("{0:0.##}", car.RentCostPerMinute)" required />
                         </div>
                     </div>
                     <div class="modal-footer">
