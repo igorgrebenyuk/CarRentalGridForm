@@ -4,6 +4,8 @@
     <projectFile>CarRentalGridForm.Tests/CarRentalGridForm.Tests.csproj</projectFile>
     <projectFile>CarRentalGridForm.UI/CarRentalGridForm.UI.csproj</projectFile>
     <projectFile>CarRentalGridForm/CarRentalGridForm.csproj</projectFile>
+    <projectFile profileName="http">WebApplication1/WebApplication1.csproj</projectFile>
+    <projectFile profileName="https">WebApplication1/WebApplication1.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -45,7 +47,16 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/78392888e95a4b7c90c6abf02df21723fc0eb7a316153733fd54a524ce2d2f3/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b51e970d122854a7a6cc153c0b0c9903668551dffe92fc4d06d14c6d29a4989/GenericCollectionAssertions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CarRentalGridForm.Web/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CarRentalGridForm/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -59,6 +70,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.WebApplication1: http.executor&quot;: &quot;Run&quot;,
     &quot;.NET Project.CarRentalGridForm.UI.executor&quot;: &quot;Run&quot;,
     &quot;.NET Project.CarRentalGridForm.executor&quot;: &quot;Run&quot;,
     &quot;8a107f78-20f5-4ab2-bc5f-163adac46e15.executor&quot;: &quot;Debug&quot;,
@@ -66,7 +78,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#11 on Dev__EfCore&amp;&amp;Assync&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#12 on Dev__AspNetMvc&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -80,7 +92,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.CarRentalGridForm">
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebApplication1: http">
     <configuration name="CarRentalGridForm" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/CarRentalGridForm.UI/bin/Debug/net10.0-windows/CarRentalGridForm.UI.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -144,6 +156,38 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="WebApplication1: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CarRentalGridForm.Web/CarRentalGridForm.Web.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net10.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication1: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CarRentalGridForm.Web/CarRentalGridForm.Web.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net10.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -202,6 +246,17 @@
       <workItem from="1779990619001" duration="145000" />
       <workItem from="1779996137416" duration="258000" />
       <workItem from="1779997568502" duration="198000" />
+      <workItem from="1780825291971" duration="169000" />
+      <workItem from="1780858374602" duration="1656000" />
+      <workItem from="1781032927546" duration="79000" />
+      <workItem from="1781035652637" duration="101000" />
+      <workItem from="1781205311145" duration="154000" />
+      <workItem from="1781213691500" duration="578000" />
+      <workItem from="1781257478174" duration="60000" />
+      <workItem from="1781367861542" duration="1490000" />
+      <workItem from="1781435046271" duration="92000" />
+      <workItem from="1781435998598" duration="103000" />
+      <workItem from="1781456875948" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="Разделил всё по слоям">
       <option name="closed" value="true" />
@@ -507,7 +562,79 @@
       <option name="project" value="LOCAL" />
       <updated>1779997629873</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Создание ветки для РП + создал MVC">
+      <option name="closed" value="true" />
+      <created>1780825434330</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1780825434330</updated>
+    </task>
+    <task id="LOCAL-00040" summary="дописал програм в веб проекте и написал реадер">
+      <option name="closed" value="true" />
+      <created>1781033000492</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1781033000492</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Полностью реализовал метод IReader">
+      <option name="closed" value="true" />
+      <created>1781035709719</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1781035709719</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Сделал IWriter">
+      <option name="closed" value="true" />
+      <created>1781205341972</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1781205341972</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Сделал так чтобы таблица выводилась">
+      <option name="closed" value="true" />
+      <created>1781257515328</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1781257515329</updated>
+    </task>
+    <task id="LOCAL-00044" summary="убрал класс репозитория , перенес его код в ef storage&#10;переделал home контроллер и сделал index вьюху">
+      <option name="closed" value="true" />
+      <created>1781368660894</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1781368660894</updated>
+    </task>
+    <task id="LOCAL-00045" summary="сделал фул индекс , решил проблему с редактированием данных + дообавил максимальные значения для заполнения данных">
+      <option name="closed" value="true" />
+      <created>1781435126766</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1781435126766</updated>
+    </task>
+    <task id="LOCAL-00046" summary="сделал  саммари">
+      <option name="closed" value="true" />
+      <created>1781436057443</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1781436057444</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Изменил часть кода по требованиям ревьювера">
+      <option name="closed" value="true" />
+      <created>1781456907920</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1781456907920</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,16 +655,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="убрал кар валидатор" />
-    <MESSAGE value="Почти всё" />
-    <MESSAGE value="убрал кар валидатор и переделал валидацию через биндинги" />
-    <MESSAGE value="фигурные скобки добавил" />
-    <MESSAGE value="Проверка" />
-    <MESSAGE value="проверка" />
-    <MESSAGE value="эту часть сделал" />
-    <MESSAGE value="создаю ПР" />
-    <MESSAGE value="добавил классы для юнит тестов" />
-    <MESSAGE value="Добавил все нужные нагет пакеты" />
     <MESSAGE value="Создал класс для логирования БЛ" />
     <MESSAGE value="Написал  логеры для БЛ" />
     <MESSAGE value="Настроил seq , дописал програм и добавил реализацию ICarService в класс враппера" />
@@ -553,7 +670,17 @@
     <MESSAGE value="Оформил GetById асинхроном" />
     <MESSAGE value="GetAllCarsAsync и GetStatisticsAsync сделал асинхронным" />
     <MESSAGE value="Саммари + сделал норм название БД" />
-    <option name="LAST_COMMIT_MESSAGE" value="Саммари + сделал норм название БД" />
+    <MESSAGE value="Создание ветки для РП" />
+    <MESSAGE value="Создание ветки для РП + создал MVC" />
+    <MESSAGE value="дописал програм в веб проекте и написал реадер" />
+    <MESSAGE value="Полностью реализовал метод IReader" />
+    <MESSAGE value="Сделал IWriter" />
+    <MESSAGE value="Сделал так чтобы таблица выводилась" />
+    <MESSAGE value="убрал класс репозитория , перенес его код в ef storage&#10;переделал home контроллер и сделал index вьюху" />
+    <MESSAGE value="сделал фул индекс , решил проблему с редактированием данных + дообавил максимальные значения для заполнения данных" />
+    <MESSAGE value="сделал  саммари" />
+    <MESSAGE value="Изменил часть кода по требованиям ревьювера" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменил часть кода по требованиям ревьювера" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
