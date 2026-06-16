@@ -39,13 +39,22 @@ public class HomeController : Controller
     /// Создаёт новый автомобиль
     /// </summary>
     [HttpPost]
-    public async Task<IActionResult> Create(Car car)
+    public async Task<IActionResult> Create(Car model)
     {
         if (!ModelState.IsValid)
         {
-            var cars = await carService.GetAllCarsAsync();
-            return View(nameof(Index), cars);
+            return View(model);
         }
+
+        var car = new Car
+        {
+            Brand = model.Brand,
+            LicensePlate = model.LicensePlate,
+            Mileage = model.Mileage,
+            AverageConsumption = model.AverageConsumption,
+            CurrentFuel = model.CurrentFuel,
+            RentCostPerMinute = model.RentCostPerMinute
+        };
 
         await carService.AddCarAsync(car);
         return RedirectToAction(nameof(Index));
